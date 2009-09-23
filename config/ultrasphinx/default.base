@@ -1,0 +1,52 @@
+<% path = RAILS_ROOT + "/sphinx_index" %>
+<% log  = RAILS_ROOT + "/log" %>
+<% pid  = RAILS_ROOT + "/tmp/pids"%>
+<% dict = RAILS_ROOT + "/dict"%>
+# Indexing options
+indexer
+{  
+  mem_limit = 256M
+  delta = <%= 1.day + 30.minutes %> 
+}
+# Daemon options
+searchd
+{  
+  # What interface the search daemon should listen on and where to store its logs
+  listen  = 0.0.0.0:3312
+  seamless_rotate = 1
+  log = <%= log %>/searchd.log
+  query_log = <%= log %>/search-query.log
+  read_timeout = 5
+  max_children = 300
+  pid_file = <%= pid %>/sphinx-searchd.pid
+  max_matches = 100000
+}
+
+# Client options
+client
+{
+  server_host = localhost
+  server_port = 3312
+}
+
+# Individual SQL source options
+source
+{  
+  sql_ranged_throttle = 0  
+  sql_range_step = 5000   
+  sql_query_post =
+}
+
+# Index building options
+index
+{  
+  path = <%= path %>
+  docinfo = extern # Just leave this alone
+  morphology = none
+  # stopwords = <%= path %>/ap-stopwords.txt
+  min_word_len = 1
+  html_strip = 0
+  html_index_attrs =
+  charset_type = zh_cn.utf-8
+  charset_dictpath = <%= dict %>
+}

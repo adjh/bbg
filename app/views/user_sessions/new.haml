@@ -1,0 +1,24 @@
+%h1= t("g.signin")
+= error_messages_for :user_session
+- form_for @user_session, :url => user_session_path(:to => params[:to]), :html=>{:class =>'bg'} do |f|
+  .form-row
+    %label.required= t("account.login")
+    = f.text_field :login
+  %hr.split
+
+  .form-row
+    %label.required= t("account.password")
+    = f.password_field :password
+  %hr.split
+
+  .form-row
+    %label &nbsp;
+    = f.check_box :remember_me
+    %span= t("g.remember_me")
+  %hr.split
+  
+  .form-btn
+    = f.submit t("g.signin")
+    = link_to t("g.forgot_pwd"), forgot_pwd_url
+
+

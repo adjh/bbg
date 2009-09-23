@@ -1,0 +1,25 @@
+%h1= t("account.setting")
+%br/
+%ul.tabs
+  %li= link_to t("account.personal_info"),  account_path
+  %li.current= link_to t("account.upload_avatar"), upload_avatar_path
+  %li= link_to t("account.change_password"), change_password_path
+.tabs-container
+  = error_messages_for :user
+  - form_for :user,:html=>{:multipart => true, :class =>'bg'} do |f|
+    - if @user.avatar?
+      .form-row
+        %label= t("account.current_avatar")
+        .area
+          = image_tag(@user.avatar.url(:large))
+          = image_tag(@user.avatar.url(:medium))
+          = image_tag(@user.avatar.url(:thumb))
+      %hr.split
+    
+    .form-row
+      %label= t("account.choose_file")
+      = f.file_field :avatar
+    %hr.split
+
+    .form-btn
+      = f.submit t("g.upload")

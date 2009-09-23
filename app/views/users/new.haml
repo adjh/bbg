@@ -1,0 +1,30 @@
+%h1= t("g.signup")
+= error_messages_for :user
+- form_for @user,:user, :url => account_path, :html=>{:class =>'bg'} do |f|
+  .form-row
+    %label.required= t("account.login")
+    = f.text_field :login
+  %hr.split
+
+  .form-row
+    %label.required= t("account.name")
+    = f.text_field :name
+  %hr.split
+
+  .form-row
+    %label.required= t("account.email")
+    = f.text_field :email
+  %hr.split
+
+  .form-row
+    %label.required= t("account.password")
+    = f.password_field :password
+  %hr.split
+
+  .form-row
+    %label.required= t("account.password_confirm")
+    = f.password_field :password_confirmation
+  %hr.split
+  
+  .form-btn
+    = f.submit t("g.create")

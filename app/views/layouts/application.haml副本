@@ -1,0 +1,69 @@
+!!! Strict
+%html{ html_attrs("en_us") }
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %title Wines Site
+    %link{:href => "/stylesheets/reset.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
+    %link{:href => "/stylesheets/bbg_v1.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
+    %script{:type =>"text/"+"javascript",:src=> "/javascripts/jquery.js"}
+    %script{:type =>"text/"+"javascript",:src=> "/javascripts/bbg_v1.js"}
+    = yield :js
+    = yield :css
+  %body
+    #hd
+      #top.wrapper
+        %h1= image_tag('toplogo.gif', :width => 87, :height => 30)
+        %ul
+          %li= link_to '帮助','#'
+          %li= link_to 'Q&A','#'
+          %li= link_to image_tag('gs.gif'),'#'
+      #navs.wrapper
+        %ul
+          %li{}= link_to image_tag('head_index_tab.gif'),'#'
+          %li{}= link_to image_tag('head_catalog.gif'),'#'
+          %li{}= link_to image_tag('head_wiki.gif'),'#'
+          %li{}= link_to image_tag('head_shop.gif'),'#'
+          %li{}= link_to image_tag('head_club.gif'),'#'
+          %li{}= link_to image_tag('head_bid.gif'),'#'
+      #my.wrapper
+        %ul{:id=>'sMember'}
+          %li= link_to image_tag('login.gif', :width => 45, :height => 22), '#'
+        %ul{:id=>'sMenu'}
+          %li= link_to '我的收藏夹', '#'
+      / .menus
+      /   %ul
+      /     %li 首页
+      #hd1st.clearfix
+        %h1= image_tag('toplogo.gif', :width => 87, :height => 30)
+        %ul
+          %li= link_to '帮助','#'
+          %li= link_to 'Q&A','#'
+          %li= link_to image_tag('gs.gif'),'#'
+      #hd2nd.clearfix
+        %ul
+          %li{}= link_to image_tag('head_index_tab.gif'),'#'
+          %li{}= link_to image_tag('head_catalog.gif'),'#'
+          %li{}= link_to image_tag('head_wiki.gif'),'#'
+          %li{}= link_to image_tag('head_shop.gif'),'#'
+          %li{}= link_to image_tag('head_club.gif'),'#'
+          %li{}= link_to image_tag('head_bid.gif'),'#'
+      #hd3rd.clearfix
+        .ttt{:style => 'width:885px;margin:auto;'}
+          %ul{:id=>'sMember'}
+            %li= link_to image_tag('login.gif', :width => 45, :height => 22), '#'
+          %ul{:id=>'sMenu'}
+            %li= link_to '我的收藏夹', '#'
+    #wrapper
+      #container
+        - content_tag(:div, :id => "flash") do
+          - flash.each do |key, value|
+            - content_tag(:div, :class=> "flash_#{key}") do
+              = value
+        = @content_for_layout
+      #ft
+        %ul
+          %li{:class => 'footliStart'}= link_to '购物保障', '#'
+          %li= link_to '服务条款', '#'
+          %li= link_to '安全说明', '#'
+          %li= link_to '隐私声明', '#'
+          %li= link_to 'CopyRight @ 2009 beibeigan.com', '/'

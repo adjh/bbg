@@ -1,0 +1,34 @@
+%h1= t("account.setting")
+%br/
+%ul.tabs
+  %li.current= link_to t("account.personal_info"),  account_path
+  %li= link_to t("account.upload_avatar"), upload_avatar_path
+  %li= link_to t("account.change_password"), change_password_path
+.tabs-container
+  = error_messages_for :user
+  - form_for @user,:user, :url => account_path,:html=>{:class =>'bg'} do |f|
+    .form-row
+      %label.required= t("account.login")
+      = f.text_field :login
+    %hr.split
+
+    .form-row
+      %label.required= t("account.name")
+      = f.text_field :name
+    %hr.split
+    
+    .form-row
+      %label.required= t("account.email")
+      = f.text_field :email
+    %hr.split
+    
+    .form-row
+      %label= t("account.sex")
+      = f.radio_button(:sex, 0)   
+      = t("account.sex_female")
+      = f.radio_button(:sex, 1)
+      = t("account.sex_male")
+    %hr.split
+        
+    .form-btn
+      = f.submit t("g.update")

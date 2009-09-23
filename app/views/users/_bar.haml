@@ -1,0 +1,12 @@
+%ul.clearfix
+  - if !current_user
+    %li= link_to t("g.signup"), signup_url
+    %li= link_to t("g.signin"), login_url
+  - else
+    %li
+      = t("account.welcome")
+      - content_tag(:span, :class=> gender_color(current_user.sex)) do
+        = current_user.name
+    %li= '|'
+    %li= link_to t("account.setting"), account_url
+    %li= link_to t("g.logout"), logout_url

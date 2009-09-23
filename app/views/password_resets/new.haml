@@ -1,0 +1,9 @@
+%h1= t("account.forgot_password")
+%br/
+%p= t("account.reset_password_tip")
+%br/
+- form_tag password_resets_path do
+  %label= t("account.email")
+  = text_field_tag :email
+  = submit_tag t("account.reset_password")
+

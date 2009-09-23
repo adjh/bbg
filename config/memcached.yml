@@ -1,0 +1,30 @@
+defaults:
+  ttl: 604800
+  readonly: false
+  urlencode: false
+  c_threshold: 10000
+  compression: true
+  debug: false
+  namespace: wine_sites_cache
+  sessions: false
+  session_servers: false
+  fragments: false
+  memory: 64
+  benchmarking: true
+  raise_errors: true
+  fast_hash: false
+  fastest_hash: false
+
+development:
+  sessions: false
+  fragments: false
+  servers: localhost:11211
+ 
+test: &TEST
+  disabled: true
+  servers: localhost:11211
+ 
+production:
+  memory: 256
+  benchmarking: false
+  servers: localhost:11211

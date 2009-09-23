@@ -1,0 +1,16 @@
+%h1= t("account.change_password")
+%br/
+= error_messages_for :user
+- form_for @user, :url => password_reset_path, :html => {:class => 'bg'} do |f|
+  .form-row
+    %label.required= t("account.password")
+    = f.password_field :password
+  %hr.split
+
+  .form-row
+    %label.required= t("account.password_confirm")
+    = f.password_field :password_confirmation
+  %hr.split
+  
+  .form-btn
+    = f.submit t("g.update")

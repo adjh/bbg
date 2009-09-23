@@ -1,0 +1,82 @@
+# create by Raecoo
+zh:
+  # global variables
+  g:
+    click: "Click here"
+    submit:     "Submit"
+    cancel:     "Cancel"
+    search:     "Search"
+    preview:    "Preview"
+    create:     "Create"
+    edit:       "Edit"
+    show:       "Show"
+    update:     "Update"
+    upload:     "Upload"
+    save:       "Save"
+    delete:     "Delete"
+    destroy:    "Destroy"
+    are_you_sure:  "Are you sure？"
+    see_all:    "See all"
+    see_more:   "more..."
+    goback:     "Go back"
+    warning:    "Warging"
+    error:      "Error"
+    signin:     "Login"
+    logout:     "Logout"
+    remember_me: 'Remember Me'
+    forgot_pwd: 'Forgot password? '
+    signup:     "Sign up"
+    no_entry: 'No entry yet.'
+  # navigator menus
+  m:
+    homepage: 'Home'
+  # flash notices
+  f:
+    require_login: 'You must be logged in to access this page'
+    require_logout: 'You must be logged out to access this page'
+    success: "Operation Successful!"
+    failure: "Operation failed!"
+    
+  # account related
+  account:
+    
+    app_title:  'Account By Rails-App-Factory'
+    login:      'Login'
+    welcome:    'Welcom '
+    name:       'Name'
+    email:      'Email'
+    sex:        'Gender'
+    sex_male:   'Male'
+    sex_female: 'Female'
+    birthday:   'Birthday'
+    password:   'Password'
+    create_success: 'Congratulations, your account create successful!'
+    update_success: 'Change personal information successful!'
+    
+    setting:          'Setting'
+    personal_info:    'Personal information'
+    change_password:  'Change Password'
+    upload_avatar:         'Upload Avatar'
+ 
+    current_avatar:        'Current Avatar'
+    update_avatar_success: 'Avatar upload successful!'
+    update_avatar_failure: 'Avatar upload failure, please check!'
+    choose_file:           'Choose file'
+       
+    old_password:         'Old Password'
+    password_confirm:     'Password Confirmation'
+    forgot_password:      'Forgot Password'
+    reset_password:       'Reset my password'
+    reset_password_tip:   'Fill out the form below and instructions to reset your password will be emailed to you:'
+    reset_password_intro: 'Instructions to reset your password have been emailed to you. Please check your email.'
+    reset_password_found_failure:  "We're sorry, but we could not locate your account. If you are having issues try copying and pasting the URL from your email into your browser or restarting the reset password process."
+    not_found_by_email:      'No user was found with that email address'
+    password_update_success: 'Password successfully updated'
+    password_not_match:      'The original password is incorrect or the new password does not meet the requirements, please check!'
+    change_password_require: 'Input the new password, please!'
+    
+    login_success:    'Welcome to back!'
+    login_failure:    'Incorrect login or password, please check!'
+    logout_success:   'Logout successful!'
+    require_user:     'You must be logged in to access this page'
+    require_no_user:  'You must be logged out to access this page'
