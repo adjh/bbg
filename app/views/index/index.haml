@@ -1,28 +1,107 @@
-#flash_content
+.flash_content
   %img{:src => '/images/banner.jpg', :width => '885', :height => '370'}
-#index_content
-  #main_index
-  #side_index.clearfix
-    #tsidebar.side-right-margin
-      .side_search
-        %img{:src => '/images/searchtitle.gif', :style => 'padding: 14px 9px 2px 9px;'}
-        %img{:src => '/images/searchtext.gif', :style => 'padding: 2px 9px 0px 9px;'}
-        .fast_search
-          %form{:style => 'padding:8px 5px 8px 8px;'}
-            %input{:type => 'text', :name => 'keywords', :size =>15, :value => ''}
-            = link_to image_tag('searchbtn.gif',:title => '搜索', :style => 'float: left;margin-left: 2px;'), '#'
-          %br/
-          = link_to image_tag('searchlink.gif'), '#', :style => 'padding: 0 0 6px 9px;'
-          = link_to image_tag('help.gif'), '#', :style => 'padding: 0 0 6px 9px;padding-left: 30px;'
-      %br/
-      %ul{:style => 'border: 1px solid #CCC;padding: 0 9px 10px 9px;margin-bottom:10px;'}
-        - (1..3).each do |id|
-          %li
-            %p= link_to '美酒仙境——瑞事临酒庄','#'
-            %img{:src => "/images/tmp/jz0#{id}.gif"}
-          %li{:style=>'background:#CCC;height:1px;margin:8px 0px;'}
-            
-    #tsidebar.imglinks
+
+.t= image_tag('logo.gif',:style=>'margin-bottom:8px;')
+
+.content.fl.rmargin
+  %ul.img_forward.clearfix
+    %li.catalog.fl= link_to image_tag('index_catalog.gif'),'#'
+    %li.club.fr= link_to image_tag('index_club.gif'),'#'
+  %hr{:size=>'1',:color=>'#CCC'}
+  .clearfix
+    .wine-list.fl
+      .date 2009.09.11
       %ul
-        - (1..9).each do |i|
-          %li= link_to image_tag("tmp/links0#{i}.gif"), '#'
+        %li
+          = image_tag('tmp/images_01.jpg', :class => 'gray-border')
+          = link_to 'Howell Mountain Vineyards...豪威尔山赤霞珠葡萄酒 2006','#'
+        %li
+          = image_tag('tmp/images_02.jpg', :class => 'gray-border')
+          = link_to 'Howell Mountain Vineyards...豪威尔山赤霞珠葡萄酒 2006','#'
+        %li
+          = image_tag('tmp/images_03.jpg', :class => 'gray-border')
+          = link_to 'Howell Mountain Vineyards...豪威尔山赤霞珠葡萄酒 2006','#'        
+    .club-list.fr
+      .date 2009.09.04
+      %ul
+        %li
+          = image_tag('tmp/images_01.jpg', :class => 'gray-border')
+          = link_to '以酒会友，希望能给大家建立一个葡萄酒交流平台，共同进步！','#'
+        %li
+          = image_tag('tmp/infimg01.gif', :class => 'gray-border')
+          = link_to '以酒会友，希望能给大家建立一个葡萄酒交流平台，共同进步！','#'
+        %li
+          = image_tag('tmp/images_02.jpg', :class => 'gray-border')
+          = link_to '以酒会友，希望能给大家建立一个葡萄酒交流平台，共同进步！','#'
+        
+  #monocommunity.clearfix
+    %h3
+      %a{:href => '#'}
+        %img.linkimg{:src => '/images/tmp/images_05.gif'}
+        %img.linktext{:src => '/images/linktext.gif'}
+    %p 用户能便捷地找到喜爱的葡萄酒，并且与朋友们分享美酒人生
+
+  .module-links
+    %ul
+      %li.fl
+        %a{:href =>''}
+          %img{:src =>'/images/module_1.gif'}
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，分享你的酒品人生！      
+      %li.fr
+        %a{:href =>''}
+          %img{:src =>'/images/module_2.gif'}
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，找到你喜爱的酒！
+      %li.fl
+        %a{:href =>''}
+          %img{:src =>'/images/module_3.gif'}
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，了解你想要的酒！
+      %li.fr
+        %a{:href =>''}
+          %img{:src =>'/images/module_4.gif'}
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，分享你的酒品人生！
+      %li.fl
+        %a{:href =>''}
+          %img{:src =>'/images/module_5.gif'}
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，购买你想要的酒！
+
+ 
+.tsidebar.rmargin
+
+  .fsbox
+    %img.title{:src => '/images/searchtitle.gif'}
+    %img.desc{:src => '/images/searchtext.gif'}
+    %form
+      %p
+        %input{:type => 'text', :name => 'keywords', :size =>15, :value => ''}
+        = link_to image_tag('searchbtn.gif', :style => 'margin-left: 2px;'), '#'
+      %p
+        %a.custom{:href => '#'}= image_tag('searchlink.gif')
+        %a.help{:href => '#'}= image_tag('help.gif')
+
+  .wineries
+    %ul
+      - (1..2).each do |id|
+        %li
+          %p= link_to '美酒仙境——瑞事临酒庄','#'
+          %img{:src => "/images/tmp/jz0#{id}.gif"}
+        %li{:class => "#{(id == 2 ? 'last' : 'line')}"}
+        
+  .regions
+
+    %h1= link_to "法国 France",'#'
+    %ul
+      %li= link_to '薄酒 Beaujolais','#'
+      %li= link_to '波尔多 Bordeaux','#'
+      %li= link_to '香槟 Champagne','#'
+    
+    %h1= link_to "加拿大 Canada",'#'
+    %ul
+      %li= link_to '安大略 Ontario','#'
+      %li= link_to '不列颠哥伦比亚 British Columbia','#'
+      %li= link_to '爱德华王子岛 Prince EdwardIsland','#'
+        
+.tsidebar.imglinks
+  %ul
+    %li= image_tag("tmp/images_06.gif")
+    - (1..8).each do |i|
+      %li= link_to image_tag("tmp/links0#{i}.gif"), '#'

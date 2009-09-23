@@ -37,7 +37,7 @@
           %li= link_to '我的好友', '#'
           %li= link_to '我的购物记录', '#'
           %li.cart= link_to image_tag('cart.gif'), '#'
-    #container.wrapper
+    #container.wrapper.clearfix
       - content_tag(:div, :id => "flash") do
         - flash.each do |key, value|
           - content_tag(:div, :class=> "flash_#{key}") do
