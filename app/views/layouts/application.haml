@@ -10,24 +10,26 @@
     = yield :css
   %body
     #hd
+    
       #top.wrapper.clearfix
-        .logo= image_tag('toplogo.gif', :width => 87, :height => 30)
+        .logo= link_to image_tag('toplogo.gif', :width => 87, :height => 30), '/'
         .help
           %ul
             %li= link_to '帮助','#'
-            %li= link_to 'Q&A','#'
-            %li= link_to image_tag('gs.gif'),'#'
+            
       #navs.wrapper
         %ul.clearfix
-          %li{}= link_to image_tag('navs/head_index_tab.gif'),'#'
-          %li{}= link_to image_tag('navs/head_catalog.gif'),'#'
-          %li{}= link_to image_tag('navs/head_wiki.gif'),'#'
-          %li{}= link_to image_tag('navs/head_shop.gif'),'#'
-          %li{}= link_to image_tag('navs/head_club.gif'),'#'
-          %li{}= link_to image_tag('navs/head_bid.gif'),'#'
+          - tabs_tag(:builder => MenuTabBuilder) do |tab|
+            = tab.index image_tag('navs/head_index_tab.gif'),'/', :class => 'index'
+            = tab.catalog image_tag('navs/head_catalog.gif'),'#'
+            = tab.wiki image_tag('navs/head_wiki.gif'),'/wikis'
+            = tab.shop image_tag('navs/head_shop.gif'),'#'
+            = tab.club image_tag('navs/head_club.gif'),'#'
+            = tab.bid image_tag('navs/head_bid.gif'),'#'
+            
       #my.wrapper.clearfix
         %ul.status{:id=>'sMember'}
-          %li= link_to image_tag('login.gif', :width => 45, :height => 22), '#'
+          %li= link_to image_tag('login.gif', :width => 45, :height => 22), login_url
           %li= link_to '(&nbsp;注册', signup_url
           %li= "|"
           %li= link_to '忘记密码&nbsp;)', signup_url
@@ -37,12 +39,14 @@
           %li= link_to '我的好友', '#'
           %li= link_to '我的购物记录', '#'
           %li.cart= link_to image_tag('cart.gif'), '#'
+          
     #container.wrapper.clearfix
       - content_tag(:div, :id => "flash") do
         - flash.each do |key, value|
           - content_tag(:div, :class=> "flash_#{key}") do
             = value
       = @content_for_layout
+      
     #ft.wrapper
       %ul
         %li{:class => 'footliStart'}= link_to '购物保障', '#'

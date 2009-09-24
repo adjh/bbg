@@ -5,6 +5,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => "index"
   
+  # wiki related
+  map.resources :wikis
+  
   # account related 
   map.resource  :account, :controller => "users"
   map.resource  :user_session

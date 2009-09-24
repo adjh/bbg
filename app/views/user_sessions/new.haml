@@ -1,24 +1,30 @@
-%h1= t("g.signin")
-= error_messages_for :user_session
-- form_for @user_session, :url => user_session_path(:to => params[:to]), :html=>{:class =>'bg'} do |f|
-  .form-row
-    %label.required= t("account.login")
-    = f.text_field :login
-  %hr.split
+.login
+  %h1= image_tag("login_title.gif")
+  = error_messages_for :user_session
+  - form_for @user_session, :url => user_session_path(:to => params[:to]), :html=>{:class =>'rborder'} do |f|
+    %table
+      %tr
+        %td{:colspan=>2}= image_tag('login_title_1.gif')
+      %tr
+        %td= image_tag('text_login.gif')
+        %td= f.text_field :login
+      %tr
+        %td= image_tag('text_pwd.gif')
+        %td= f.password_field :password        
+      %tr
+        %td &nbsp;
+        %td
+          = image_submit_tag("login_btn.gif")
+          = link_to '忘记密码', forgot_pwd_url
 
-  .form-row
-    %label.required= t("account.password")
-    = f.password_field :password
-  %hr.split
-
-  .form-row
-    %label &nbsp;
-    = f.check_box :remember_me
-    %span= t("g.remember_me")
-  %hr.split
-  
-  .form-btn
-    = f.submit t("g.signin")
-    = link_to t("g.forgot_pwd"), forgot_pwd_url
-
-
+.reg_desc
+  .rborder
+    %h1= image_tag("reg_title_1.gif")
+    %h2= image_tag("reg_title_2.gif")
+    .txt
+      = image_tag("reg_title_3.gif")
+      %ul
+        %li 探索这个最大的中文葡萄酒数据库，找到适合你的那一支，比较数个主流葡萄酒销售平台的价格提升你的购酒体验。
+        %li 记录分享你的试酒感受，阅读专业人士和爱好者的酒评，结交斛朋酒友。
+        %li 阅读评论最新、最IN的葡萄酒，和时尚生活的新闻资讯、博客美文。
+        %li 功能强大且易用的在线酒簿管理工具，管理分享你的私人酒藏和Wish List。

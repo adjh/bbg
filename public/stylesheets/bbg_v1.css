@@ -242,6 +242,7 @@ a:active, a:hover { color:#7F0019; }
 .fl { float:left; }
 .fr { float:right; }
 .gray-border { border:1px solid #CCC;}
+.rborder { border:5px solid #CCC;}
 .content {
  width:525px;
 /* border:1px solid #ccc; */
@@ -427,8 +428,39 @@ a:active, a:hover { color:#7F0019; }
 .module-links ul li a:hover img,
 .module-links ul li a:active img { border: 1px solid #7F0019; } /*变线*/
 
-
-
+/* login */
+.login {
+  width:700px;
+  margin-left:40px;
+}
+.login h1 {
+  padding:20px 0px 8px 0px;border-bottom:1px dotted #CCC
+}
+.login form {
+  margin-top:20px;
+}
+.login form input{
+  padding:3px 0px;
+}
+.login form td{
+  padding:8px;
+}
+.reg_desc {
+  width:700px;
+/*  margin-top:30px;*/
+  margin:30px 0px 40px 40px;
+}
+.reg_desc h1,.reg_desc h2,.reg_desc .txt{
+  margin:15px;
+}
+.reg_desc .txt {
+  padding:15px 20px;
+  background-color: #F3F3F3;
+}
+.reg_desc .txt li {
+  margin: 10px 0 0 15px;
+  list-style-type: disc; margin-bottom: 3px; line-height:1.4;
+}
 
 /* tab style for ul */
 ul.tabs{overflow:hidden; zoom:1; position:relative; top:1px;}
