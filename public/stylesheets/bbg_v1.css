@@ -460,6 +460,46 @@ a:active, a:hover { color:#7F0019; }
   margin: 10px 0 0 15px;
   list-style-type: disc; margin-bottom: 3px; line-height:1.4;
 }
+.reg {
+  margin:30px 0px 30px 40px;
+  width:700px;
+}
+.reg h1 {
+  padding-bottom:15px;border-bottom:1px dotted #CCC;
+}
+.reg form table {
+  margin-top:20px;
+  width:100%;
+  border:1px solid #d6d6d6; 
+  border-bottom:none;
+  font-size:14px; 
+  font-weight:bold;
+}
+.reg form input {
+  padding:3px 0px;
+}
+.reg form th {
+   width:170px;
+   background:#f6f6f6;  
+   border-right:1px dashed #d6d6d6;
+   border-bottom:1px solid #d6d6d6;
+   padding-left:30px; 
+}
+.reg form td {
+  padding:15px;
+  border-bottom:1px solid #d6d6d6;
+  background:#FFF;
+}
+.reg form .btns .accept{
+  margin-left:20px;
+  margin-top:25px;
+  float:left;
+}
+.reg form .btns .btn{
+  float:left;
+  margin-top:20px;
+  margin-left:100px;
+}
 
 /* tab style for ul */
 ul.tabs{overflow:hidden; zoom:1; position:relative; top:1px;}

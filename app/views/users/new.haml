@@ -1,33 +1,25 @@
 .reg
   %h1= image_tag("reg_title.gif")
-
-%h1= t("g.signup")
-= error_messages_for :user
-- form_for @user,:user, :url => account_path, :html=>{:class =>'bg'} do |f|
-  .form-row
-    %label.required= t("account.login")
-    = f.text_field :login
-  %hr.split
-
-  .form-row
-    %label.required= t("account.name")
-    = f.text_field :name
-  %hr.split
-
-  .form-row
-    %label.required= t("account.email")
-    = f.text_field :email
-  %hr.split
-
-  .form-row
-    %label.required= t("account.password")
-    = f.password_field :password
-  %hr.split
-
-  .form-row
-    %label.required= t("account.password_confirm")
-    = f.password_field :password_confirmation
-  %hr.split
-  
-  .form-btn
-    = f.submit t("g.create")
+  = error_messages_for :user
+  - form_for @user,:user, :url => account_path, :html=>{:class =>'bg'} do |f|
+    %table{:cellspacing=>0, :cellpadding=>0,:border=>0}
+      %tr
+        %th{:width =>150}= t("account.login")
+        %td= f.text_field :login      
+      %tr
+        %th= t("account.name")
+        %td= f.text_field :name      
+      %tr
+        %th= t("account.email")
+        %td= f.text_field :email      
+      %tr
+        %th= t("account.password")
+        %td= f.text_field :password
+      %tr
+        %th= t("account.password_confirm")
+        %td= f.text_field :password_confirmation
+    .btns.clearfix
+      .accept
+        = f.check_box :terms_of_service
+        我已接受本站协议
+      .btn= image_submit_tag("regbtn.gif") 

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  validates_acceptance_of :terms_of_service
+
   has_attached_file :avatar,
     :styles => { :large   => "98x98#", :medium => "48x48#", :thumb => "32x32#"},
     :url => "/:attachment/:id_partition/:id-:style.png" ,
