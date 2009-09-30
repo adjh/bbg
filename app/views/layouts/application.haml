@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
     %title Wines Site
-    %link{:href => "/stylesheets/bbg_v1.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
+    %link{:href => "/stylesheets/bbg.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
     %script{:type =>"text/"+"javascript",:src=> "/javascripts/jquery.js"}
     %script{:type =>"text/"+"javascript",:src=> "/javascripts/bbg_v1.js"}
     = yield :js
@@ -20,12 +20,12 @@
       #navs.wrapper
         %ul.clearfix
           - tabs_tag(:builder => MenuTabBuilder) do |tab|
-            = tab.index image_tag('navs/head_index_tab.gif'),'/', :class => 'index'
-            = tab.catalog image_tag('navs/head_catalog.gif'),'#'
-            = tab.wiki image_tag('navs/head_wiki.gif'),'/wikis'
-            = tab.shop image_tag('navs/head_shop.gif'),'#'
-            = tab.club image_tag('navs/head_club.gif'),'#'
-            = tab.bid image_tag('navs/head_bid.gif'),'#'
+            = tab.index   image_tag('nav_index.png'),'/'
+            = tab.wiki    image_tag('nav_wiki.png'),'/wikis'
+            = tab.catalog image_tag('nav_catalog.png'),'/catalogs'
+            = tab.shop    image_tag('nav_shop.png'),'/shops'
+            = tab.forum    image_tag('nav_forum.png'),'/forums'
+            = tab.bid     image_tag('nav_bid.png'),'/bids'
             
       #my.wrapper.clearfix
         %ul.status{:id=>'sMember'}

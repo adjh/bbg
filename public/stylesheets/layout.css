@@ -13,7 +13,7 @@
 #hd {
   font-family: "微软雅黑";
 	font-size:12px;
-	background: #FFF url(/images/navs/hdbg.png) 0px 0px repeat-x;
+	background: #FFF url(/images/bg/hdbg.png) 0px 0px repeat-x;
 	height:110px;
 }
 #top {
@@ -45,32 +45,24 @@
 #navs li {
   float:left;
   height:28px;
-  width:92px;
-  padding-top:4px;
+  width:90px;
+  padding-top:2px;
   margin-right:10px;
 }
 #navs li a {
-  background: url(/images/bg/hd_navs.png) no-repeat;
-  padding:8px 44px;
+  background: url(/images/bg/nav_arrow.png) no-repeat;
+  padding-left:8px;
 }
-/*home*/
-#navs li.current a.home { background-position: 0px 0px;}
-#navs li a.home { background-position: 0px -37px;}
-
-#navs li.current a.catalog { background-position: -95px 0px;}
-#navs li a.catalog { background-position: -95px -37px;}
-
-#navs li.current a.wiki { background-position: -190px 0px;}
-#navs li a.wiki { background-position: -190px -37px;}
-
-#navs li.current a.store { background-position: -285px 0px;}
-#navs li a.store { background-position: -285px -37px;}
-
-#navs li.current a.forum { background-position: -380px 0px;}
-#navs li a.forum { background-position: -380px -37px;}
-
-#navs li.current a.bid { background-position: -475px 0px;}
-#navs li a.bid { background-position: -475px -37px;}
+#navs li a img{
+  padding-top:4px;
+}
+#navs li.current {
+  background: url(/images/bg/nav_tab_bg.png) no-repeat;
+  margin-top:2px;
+}
+#navs li.current a{
+  background: none;
+}
 
 #my {
   margin-top:5px;

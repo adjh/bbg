@@ -8,6 +8,18 @@ ActionController::Routing::Routes.draw do |map|
   # wiki related
   map.resources :wikis
   
+  # catalog related
+  map.resources :catalogs
+  
+  # forum related
+  map.resources :forums
+  
+  # shop related
+  map.resources :shops
+  
+  # bid related
+  map.resources :bids
+  
   # account related 
   map.resource  :account, :controller => "users"
   map.resource  :user_session
