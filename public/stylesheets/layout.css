@@ -1,0 +1,178 @@
+/* layout container define of the bbg */
+
+/*
+-------------------------
+-- Page Structure
+-------------------------
+*/
+.wrapper {
+  width:885px;
+  margin:0px auto;
+  text-align:left;
+}
+#hd {
+  font-family: "微软雅黑";
+	font-size:12px;
+	background: #FFF url(/images/navs/hdbg.png) 0px 0px repeat-x;
+	height:110px;
+}
+#top {
+  padding-top:6px;
+}
+#top a {
+  color:#fff;
+}
+#top .logo {
+  float:left;
+  margin-left:30px;
+}
+#top .help {
+  float:right;
+}
+#top .help li {
+  float:left;
+  font-size:14px;
+  font-weight:bold;
+  margin-right:8px;
+  padding-top:5px;
+}
+#top .help li a {
+  text-decoration: underline;
+}
+#navs {
+  padding-left:40px;
+}
+#navs li {
+  float:left;
+  height:28px;
+  width:92px;
+  padding-top:4px;
+  margin-right:10px;
+}
+#navs li a {
+  background: url(/images/bg/hd_navs.png) no-repeat;
+  padding:8px 44px;
+}
+/*home*/
+#navs li.current a.home { background-position: 0px 0px;}
+#navs li a.home { background-position: 0px -37px;}
+
+#navs li.current a.catalog { background-position: -95px 0px;}
+#navs li a.catalog { background-position: -95px -37px;}
+
+#navs li.current a.wiki { background-position: -190px 0px;}
+#navs li a.wiki { background-position: -190px -37px;}
+
+#navs li.current a.store { background-position: -285px 0px;}
+#navs li a.store { background-position: -285px -37px;}
+
+#navs li.current a.forum { background-position: -380px 0px;}
+#navs li a.forum { background-position: -380px -37px;}
+
+#navs li.current a.bid { background-position: -475px 0px;}
+#navs li a.bid { background-position: -475px -37px;}
+
+#my {
+  margin-top:5px;
+}
+#my a {
+  text-decoration: underline;
+}
+#my .status {
+  float:left;
+  margin-left:20px;
+}
+#my .links {
+  float:right;
+  margin-right:20px;
+}
+#my .status li, #my .links li {
+  float:left;
+  margin-right:8px;
+}
+#my .links li.cart a {
+   display: block; 
+}
+#my .links li.cart a:hover{
+  background: url(/images/cart_over.gif) no-repeat 0 0;
+}
+#my .links li.cart a:hover img{
+  visibility: hidden;
+}
+#ft {
+	font-size:12px;
+	line-height:1.4;
+	padding: 10px 0px;
+	margin-bottom:40px;
+}
+#ft a {
+	text-decoration: underline;
+}
+#ft ul {
+	border-top: 1px solid #666;
+	padding: 8px 0 0 100px;
+	margin:auto;
+}
+#ft ul li {
+	font-size: 12px;
+	background: url(/images/footmark.gif) no-repeat 0 50%;
+	float: left;
+	padding: 0 20px;
+}
+#ft ul li.footliStart {
+	background: none;
+	padding-left: 0;
+}
+
+#guide {
+  border-top:1px solid #666;
+  margin-top:40px;
+  margin-bottom:20px;
+  padding:15px 0px;
+  background-color:#f4f1e9;
+}
+#guide .col {
+  float:left;
+  margin:0px 20px;
+}
+#guide .col h3 img{
+  margin-right:5px;
+}
+#guide .col ul{
+  margin:0px 10px;
+}
+#guide .col ul li{
+  float:left;
+  margin:3px 10px 3px 5px;
+}
+#guide .col ul li a {
+  text-decoration:underline;
+}
+
+#container {
+  margin-top:10px;
+}
+#main {
+  width:710px;
+}
+#content {
+  width:540px;
+}
+#my-content {
+  width:500px;
+}
+#rich-sidebar {
+  width:320px;
+}
+#mid-sidebar {
+  width:200px;
+}
+#mid-content {
+  width:660px;
+}
+#thin-sidebar {
+  width:150px;
+}
+#my-sidebar {
+  width:190px;
+}
