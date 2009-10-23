@@ -1,0 +1,16 @@
+h1. Thinking Sphinx Chinese
+
+h2. Usage
+
+add follow set options into sphinx.yml then regenerate index and restart sphinx daemon that's ok
+--
+charset_type: zh_cn.utf-8
+charset_dictpath: <your/dict/full/path>
+
+NOTICE: 
+  this plugin need run the sphinx Chinese patch first.
+  
+Sphinx Chinese Patch:
+  http://www.coreseek.com
+   
+more options informations pls forward to http://github.com/freelancing-god/thinking-sphinx
