@@ -1,0 +1,13 @@
+development:
+  charset_type: zh_cn.utf-8
+  charset_dictpath: "#{RAILS_ROOT}/dict"
+  
+test:
+  port: 3313
+  charset_type: zh_cn.utf-8
+  charset_dictpath: "#{RAILS_ROOT}/dict"
+  
+production:
+  port: 3312
+  charset_type: zh_cn.utf-8
+  charset_dictpath: "#{RAILS_ROOT}/dict"

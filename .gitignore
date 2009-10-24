@@ -10,7 +10,7 @@ test/fixtures/*.yml
 
 .DS_Store
 doc/api
-config/ultrasphinx/*.conf
+config/*.sphinx.conf
 public/javascripts/all.js
 public/stylesheets/all.js
 public/avatars

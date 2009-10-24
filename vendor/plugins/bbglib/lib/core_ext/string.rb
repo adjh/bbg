@@ -1,3 +1,5 @@
+# inject custom methods into Ruby String Class
+
 class String
   # NOTE: the params length is chinese length(eg: )
   # truncate('中国人民chinese',5) => 中国人民ch...
@@ -14,3 +16,4 @@ class String
   end
 
 end
+

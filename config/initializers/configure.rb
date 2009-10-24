@@ -1,6 +1,6 @@
-# loadd extras file
-require 'core_ext'
-require 'enum_attr'
+# # loadd extras file
+# require 'core_ext'
+# require 'enum_attr'
 
 ## memcached setting
 require 'cache_money'

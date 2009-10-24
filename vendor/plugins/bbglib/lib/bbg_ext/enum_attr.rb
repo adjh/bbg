@@ -1,3 +1,16 @@
+# BBGlib
+# create by Raecoo
+
+# Example:
+
+# Model
+# class User < ActiveRecord::Base   
+#   enum_attr :sex, [['男', 0], ['女', 1]]  
+# end
+
+# View
+# form.select :sex, User::ENUMS_SEX
+
 module EnumAttr
 
   module Mixin
@@ -14,3 +27,5 @@ module EnumAttr
   end
     
 end
+
+

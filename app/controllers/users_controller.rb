@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update, :avatar, :password]
+  before_filter :logout_required, :only => [:new, :create]
+  before_filter :login_required,  :only => [:show, :edit, :update, :avatar, :password]
   before_filter :assign_user, :except  => [:new, :create]
   
   def new
