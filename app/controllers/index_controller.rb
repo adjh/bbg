@@ -1,3 +1,3 @@
 class IndexController < ApplicationController
-  set_tab :index
+  set_tab :home
 end

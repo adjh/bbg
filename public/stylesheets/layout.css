@@ -93,9 +93,9 @@ li#nav-catalog.active a { background-position: -93px -56px; }
 li#nav-wiki a { background-position: -186px 0; }
 li#nav-wiki a:hover { background-position: -186px -28px; }
 li#nav-wiki.active a { background-position: -186px -56px; }
-li#nav-store a { background-position: -279px 0; }
-li#nav-store a:hover { background-position: -279px -28px; }
-li#nav-store.active a { background-position: -279px -56px; }
+li#nav-shop a { background-position: -279px 0; }
+li#nav-shop a:hover { background-position: -279px -28px; }
+li#nav-shop.active a { background-position: -279px -56px; }
 li#nav-forum a { background-position: -372px 0; }
 li#nav-forum a:hover { background-position: -372px -28px; }
 li#nav-forum.active a { background-position: -372px -56px; }
@@ -162,7 +162,7 @@ li#nav-bid.active a { background-position: -465px -56px; }
 }
 
 #nav-login a {
-	background: url(/images/login.png) no-repeat;
+	background: url(/images/login_bg.png) no-repeat;
 	width: 42px;
 	height: 13px;
 	text-indent: -9999em;
@@ -238,7 +238,7 @@ li#nav-bid.active a { background-position: -465px -56px; }
 	float: left;
 	padding: 0 20px;
 }
-#ft ul li.footliStart {
+#ft ul li.start {
 	background: none;
 	padding-left: 0;
 }

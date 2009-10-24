@@ -3,43 +3,28 @@
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
     %title Wines Site
-    %link{:href => "/stylesheets/bbg.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
-    %script{:type =>"text/"+"javascript",:src=> "/javascripts/jquery.js"}
-    %script{:type =>"text/"+"javascript",:src=> "/javascripts/bbg_v1.js"}
-    = yield :js
-    = yield :css
+    %link{:href => "/stylesheets/reset.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
+    %link{:href => "/stylesheets/layout.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
+    %link{:href => "/stylesheets/bbg_v1.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
+    %script{:type =>"text/"+"javascript",:src=> "/javascripts/jquery.js"}= yield :js
+    %script{:type =>"text/"+"javascript",:src=> "/javascripts/bbg_v1.js"}= yield :css
   %body
-    #hd
+    #header
+      .wrapper
+        #logo-wrap
+          %a.hide-text{:id => 'logo', :href => '/'}杯杯干
+          %a{:id => 'nav-help', :href => '/faq'}帮助
+        #navigation
+          %ul.clearfix
+            - tabs_tag(:builder => MenuTabBuilder) do |tab|
+              = tab.home    '首页',    '/' 
+              = tab.catalog '酒品目录',  '/catalogs'
+              = tab.wiki    '酒品百科',  '/wikis'
+              = tab.shop    '网络商城',  '/shops'
+              = tab.forum   '电子社区',  '/forums'
+              = tab.bid     '拍卖',    '/bids'
+        #my= render :partial => 'users/bar'
     
-      #top.wrapper.clearfix
-        .logo= link_to image_tag('toplogo.gif', :width => 87, :height => 30), '/'
-        .help
-          %ul
-            %li= link_to '帮助','#'
-            
-      #navs.wrapper
-        %ul.clearfix
-          - tabs_tag(:builder => MenuTabBuilder) do |tab|
-            = tab.index   image_tag('nav_index.png'),'/'
-            = tab.wiki    image_tag('nav_wiki.png'),'/wikis'
-            = tab.catalog image_tag('nav_catalog.png'),'/catalogs'
-            = tab.shop    image_tag('nav_shop.png'),'/shops'
-            = tab.forum    image_tag('nav_forum.png'),'/forums'
-            = tab.bid     image_tag('nav_bid.png'),'/bids'
-            
-      #my.wrapper.clearfix
-        %ul.status{:id=>'sMember'}
-          %li= link_to image_tag('login.gif', :width => 45, :height => 22), login_url
-          %li= link_to '(&nbsp;注册', signup_url
-          %li= "|"
-          %li= link_to '忘记密码&nbsp;)', signup_url
-        %ul.links{:id=>'sMenu'}
-          %li= link_to '我的收藏夹', '#'
-          %li= link_to '我的消息', '#'
-          %li= link_to '我的好友', '#'
-          %li= link_to '我的购物记录', '#'
-          %li.cart= link_to image_tag('cart.gif'), '#'
-          
     #container.wrapper.clearfix
       - content_tag(:div, :id => "flash") do
         - flash.each do |key, value|
@@ -49,8 +34,8 @@
       
     #ft.wrapper
       %ul
-        %li{:class => 'footliStart'}= link_to '购物保障', '#'
+        %li.start= link_to '购物保障', '#'
         %li= link_to '服务条款', '#'
         %li= link_to '安全说明', '#'
         %li= link_to '隐私声明', '#'
-        %li= link_to 'CopyRight @ 2009 beibeigan.com', '/'
+        %li= 'Copyright @ 2009 BeiBeiGan.com'
