@@ -1,64 +1,16 @@
-/* Copyright BBG */
-@charset "UTF-8";
-/***********************************
- * reset default value for element *
- **********************************/
-html{color:#000;background:#FFF;}
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td { margin:0px;padding:0px;}
-/*table { border-collapse:collapse;border-spacing:0px;}*/
-fieldset,img { border:0px; }
-address,caption,cite,code,dfn,em,strong,th,var { font-style:normal;font-weight:normal;}
-li{list-style:none;}
-caption,th{text-align:left;}
-h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:bold;}
-h1{font-size:18px;}h2{font-size:16px;}h3{font-size:14px;}
-q:before,q:after{content:'';}
-abbr,acronym {border:0;font-variant:normal;}
-sup {vertical-align:text-top;}
-sub {vertical-align:text-bottom;}
-input,textarea,select{font-family:'lucida grande',tahoma,arial,'bitstream vera sans',helvetica,sans-serif;font-size:inherit;font-weight:inherit;}
-pre,code,kbd,samp,tt{font-family:monaco,'courier new','bitstream vera sans mono',monospace;}
-legend{color:#000;}
-/**
- * Percents could work for IE, but for backCompat purposes, we are using keywords.
- * x-small is for IE6/7 quirks mode.
- */
-body{background:#fff;color:#000;font:12px/1.5 'lucida grande',tahoma,arial,'bitstream vera sans',helvetica,sans-serif;}
-table {font-size:inherit;font:100%;}
-/**
- * Bump up IE to get to 13px equivalent
- */
-pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
-/***********************
- *  use for clear element float
- ***********************/
-/* slightly enhanced, universal clearfix hack */
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
-
 /*
 -------------------------
 -- Flash Notice
 -------------------------
 */
-
+ 
 .flash_notice, .flash_error, .flash_warning,
 .flash_success, .flash_explanation {
   border: 1px solid #ebdfb0;
   background-color: #fff4c8;
   padding:5px;
   color: #000;text-align: center;
+  margin-bottom:10px;
 }
 .flash_error {
   border: 1px solid #ebb0b0;
@@ -84,216 +36,163 @@ pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
   border: 1px solid #f00;
 }
 
-/*
--------------------------
--- Pagination
--------------------------
-*/
-
-.pagination {
-  padding: 3px !important;margin: 3px !important;
-}
-.pagination a {
-  padding: 2px 5px 2px 5px;
-  margin: 2px;color: #3B5998;
-  border: 1px solid #3B5998;
-  text-decoration: none;
-  background-color: transparent;
-}
-.pagination a:hover, .pagination a:active {
-  border: 1px solid #3B5998;
-  background-color: #3B5998;
-  color: #FFF;font-weight: bold;
-}
-.pagination span.current {
-  padding: 2px 5px 2px 5px;color: #FFF;
-  margin: 2px;font-weight: bold;
-  border: 1px solid #3B5998;
-  background-color: #3B5998;
-}
-.pagination span.disabled {
-  padding: 2px 5px 2px 5px;
-  margin: 2px;color: #ddd;
-  border: 1px solid #eee;
-}
-
-/*
--------------------------
--- Override Style
--------------------------
-*/
+/* special styles define of the bbg */
+* { word-wrap:break-word; }
 body {
-	font-family: "宋体",Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 1.5;
-	color: #333;
-	background: #FFF;
-	text-align: center; /* winIE */
-	padding: 0 0 20px 0;
+	background: url(/images/header_bg.jpg) repeat-x;
+	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
 }
-
 a {	text-decoration: none;}
 a:link, a:visited { color:#333; }
 a:active, a:hover { color:#7F0019; }
+a img {border: none;}
+:focus {outline: none;}
 
+/* common style */
+.fl { float:left;}
+.fr { float:right;}
+.marginr { margin-right:20px;}
+.marginl { margin-left:20px;}
 
-/*
--------------------------
--- Page Structure
--------------------------
-*/
-.wrapper {
-  width:885px;
-  margin:0px auto;
-  text-align:left;
+.location {
+  margin-bottom:8px;
 }
-#hd {
-  font-family: "微软雅黑";
-	font-size:12px;
-	background: #FFF url(/images/navs/hdbg.png) 0px 0px repeat-x;
-	height:110px;
-}
-#top {
-  padding-top:6px;
-}
-#top a {
-  color:#fff;
-}
-#top .logo {
+.location li{
   float:left;
-  margin-left:30px;
 }
-#top .help {
-  float:right;
-}
-#top .help li {
-  float:left;
-  font-size:14px;
-  font-weight:bold;
-  margin-right:8px;
-  padding-top:5px;
-}
-#top .help li a {
-  text-decoration: underline;
-}
-#navs {
-  padding-left:40px;
-}
-#navs li {
-  float:left;
-  margin-right:20px;
-}
-#my {
-  margin-top:5px;
-}
-#my a {
-  text-decoration: underline;
-}
-#my .status {
-  float:left;
-  margin-left:20px;
-}
-#my .links {
-  float:right;
-  margin-right:20px;
-}
-#my .status li, #my .links li {
-  float:left;
-  margin-right:8px;
-}
-#my .links li.cart a {
-   display: block; 
-}
-#my .links li.cart a:hover{
-  background: url(/images/cart_over.gif) no-repeat 0 0;
-}
-#my .links li.cart a:hover img{
-  visibility: hidden;
-}
-#ft {
-	font-size:12px;
-	line-height:1.4;
-	padding: 10px 0px;
-}
-#ft a {
-	text-decoration: underline;
-}
-#ft ul {
-	border-top: 1px solid #666;
-	padding: 8px 0 0 100px;
-	margin:auto;
-}
-#ft ul li {
+.location li.split {
 	font-size: 12px;
-	background: url(/images/footmark.gif) no-repeat 0 50%;
+	background: url(/images/link_split.png) no-repeat 0 50%;
 	float: left;
-	padding: 0 20px;
+	padding:0px 3px;
+	margin:0px 10px;
 }
-#ft ul li.footliStart {
-	background: none;
-	padding-left: 0;
+.location .keywords {
+  color:#7F0019;
+  font-weight:bold;
 }
-
-/*
--------------------------
--- Custom Style
--------------------------
-*/
-.fl { float:left; }
-.fr { float:right; }
+.small-search {
+  border:1px solid #CCC;
+  background-color:#f3f3f3;
+  padding:8px;
+  margin-bottom:15px;
+}
+.small-search td.btn {
+  padding:3px 0px 0px 5px;
+}
+ 
+.region-links span.split {
+	background: url(/images/link_split.png) no-repeat 0 50%;
+	width:30px;
+	padding:0px 3px;
+}
+.dotline { border-bottom:1px dotted #CCC;}
 .gray-border { border:1px solid #CCC;}
-.rborder { border:5px solid #CCC;}
-.content {
- width:525px;
-/* border:1px solid #ccc; */
+.gray-split-line {
+  height:1px;
+  padding:0px;
+  background-color:#ccc;
+  margin:8px 0px;
+  overflow: hidden;
 }
-.flash_content {
+.dark-split-line {
+  height:1px;
+  background-color:#666;
+  margin:15px 0px;
+  overflow: hidden;
+}
+.rich-gray-border { border:5px solid #CCC;}
+.flash_content { margin:10px 0px; }
+
+.gray-table {
+  border:1px solid #CCC;
+  background-color:#f2f2f2;
+}
+.gray-table th {
+  padding:10px;
+  background-color:#f2f2f2;
+  border-bottom:1px solid #CCC;
+  font-weight:bold;
+}
+.gray-table th.last {
+  border-bottom:none;
+}
+.gray-table td {
+  background-color:#FFF;
+  border-bottom:1px solid #CCC;
+  padding-left:15px;
+}
+.gray-table td.last {
+  border-bottom:none;
+}
+.gray-table input {
+  padding:3px 0px;
+}
+.comment-list {
   margin:10px 0px;
+  width:540px;
 }
-.rsidebar {
-  
+.comment-list h2 {
+  font-size:16px;
+  margin:15px 0px;
 }
-.tsidebar {
-  width:155px;
+.comment-list li {
+  border-top:2px solid #7f0019;
+  background-color:#f5eedd;
+  padding:8px 10px;
+}
+.comment-list li.split {
+  height:1px;
+  background-color:#FFF;
+  border-top:none;
+}
+.comment-list li .commenter{
   float:left;
+  width:80px;
 }
-.lmargin {
-  margin-left:20px;
+.comment-list li .txt {
+  float:right;
+  width:420px;
 }
-.rmargin {
-  margin-right:20px;
+.comment-form {
+  border:1px solid #CCC;
+  padding:15px 15px 5px 15px;
+  width:510px;
 }
-
-.side_search {
-  border-bottom: 25px solid #FFF;
-  border: 1px solid #CCC;
+.comment-form label {
+  font-weight:bold;
+  font-size:14px;
 }
-
-.fast_search {
-  background: #F3F3F3;
-}
-
-.fast_search input {
-	color: #999;
-	float: left;
-	border: 1px solid #CCC;
-	padding: 2px 0 0 3px;
-	width: 97px;
-	height: 16px;
+.comment-form textarea {
+  margin:5px 0px;
+  padding:3px 0px;
 }
 
-/* index page image links */
-.imglinks { width:155px; float:left;}
-.imglinks li { padding: 0 0 8px 0;}
-.imglinks li img { vertical-align: bottom; margin: 0 0 5px 0;}
-.imglinks li a img { border: 1px solid #CCC; }
-.imglinks li a:hover img,.imglinks li a:active img { border: 1px solid #7F0019; }
+/* special for the index page */
+.img-ads-links { width:155px; float:left;}
+.img-ads-links li { padding: 0 0 8px 0;}
+.img-ads-links li img { vertical-align: bottom; margin: 0 0 5px 0;}
+.img-ads-links li a img { border: 1px solid #CCC; }
+.img-ads-links li a:hover img,.imglinks li a:active img { border: 1px solid #7F0019; }
 
 /* index page fast search box */
+#loopedSlider{ 
+  margin:0 auto; width:870px; 
+  position:relative; clear:both;
+}	
+#loopedSlider .sliders { 
+  width:870px; height:370px; 
+  overflow:hidden; position:relative; 
+  cursor:pointer;margin-bottom:10px; 
+}
+#loopedSlider div.slides { position:absolute; top:0; left:0; }
+#loopedSlider ul.pagination { z-index:100px; float:right;}
+#loopedSlider ul.pagination li { float:left; }
+#loopedSlider ul.pagination li a { padding:2px 4px; }
+#loopedSlider ul.pagination li.active a img{ border:1px solid #7F0019;}
 .fsbox {
    border: 1px solid #CCC;
    margin-bottom:20px;
-/*   background: #F3F3F3;*/
 }
 .fsbox form {
   background: #F3F3F3;
@@ -304,7 +203,7 @@ a:active, a:hover { color:#7F0019; }
 	float: left;
 	border: 1px solid #CCC;
 	padding: 2px 0 0 3px;
-	width: 97px;
+/*  width: 97px;*/
 	height: 16px;
 }
 .fsbox img.title {
@@ -319,8 +218,6 @@ a:active, a:hover { color:#7F0019; }
 .fsbox a.help {
   padding: 0 0 6px 9px;padding-left: 30px;
 }
-
-/* index page winery list with image */
 .wineries {
   border: 1px solid #CCC;
   padding: 15px 10px 0px 10px;
@@ -335,8 +232,6 @@ a:active, a:hover { color:#7F0019; }
   height:1px;
   margin:0px;
 }
-
-/* index page regions */
 .regions {
   border: 1px solid #CCC;
   padding: 0px 10px 0px 10px;
@@ -347,43 +242,43 @@ a:active, a:hover { color:#7F0019; }
 .regions li {
   margin:8px 0px;
 }
-
-/* index page image forward */
 .img_forward li {padding-top:8px;border-top: 1px solid #666;}
 .img_forward li.catalog a,.img_forward li.club a { display: block; }
 .img_forward li.catalog a:hover img,.img_forward li.club a:hover img{ 
   visibility: hidden;
 }
 .img_forward li.catalog a:hover {
-  background: url(/images/index_catalog_over.gif) no-repeat;
+  background: url(/images/index_catalog_over.jpg) no-repeat;
 }
 .img_forward li.club a:hover {
-  background: url(/images/index_club_over.gif) no-repeat;
+  background: url(/images/index_club_over.jpg) no-repeat;
 }
 
-.wine-list, .club-list {
+.club-list {
   width:250px;
 }
-.wine-list .date, .club-list .date {
+.club-list .date {
   font-weight: bold;
 	font-size: 10px;
 	color: #999;
 	padding: 5px 0 6px 0;
 }
-.wine-list li, .club-list li {
+.club-list li {
   vertical-align: top;
 	padding: 5px 0px 12px 0px;
 }
-.wine-list li img, .club-list li img{
+.club-list li a.img{
   vertical-align: bottom;
+  float:left;
+  width:35px;
 }
-.wine-list li a, .club-list li a{
+.club-list li a{
   vertical-align: top;
   width:200px;
   float: right;
-	display: block;
+  display: block;
+  
 }
-
 #monocommunity {
 	border-top: 1px solid #666;
 	padding: 15px 0 0 0;
@@ -393,7 +288,7 @@ a:active, a:hover { color:#7F0019; }
   display: block;
   width: 350px;
   position: relative;
-	background: url(/images/linktext_over.gif) no-repeat 50px 4px;
+	background: url(/images/linktext_over.jpg) no-repeat 50px 4px;
 }
 #monocommunity h3 a img { vertical-align: top; }
 #monocommunity h3 a img.linkimg { border: 1px solid #CCC; }
@@ -426,9 +321,8 @@ a:active, a:hover { color:#7F0019; }
 }
 .module-links ul li a img { border: 1px solid #CCC; }
 .module-links ul li a:hover img,
-.module-links ul li a:active img { border: 1px solid #7F0019; } /*变线*/
+.module-links ul li a:active img { border: 1px solid #7F0019; }
 
-/* login */
 .login {
   width:700px;
   margin-left:40px;
@@ -501,19 +395,908 @@ a:active, a:hover { color:#7F0019; }
   margin-left:100px;
 }
 
-/* tab style for ul */
-ul.tabs{overflow:hidden; zoom:1; position:relative; top:1px;}
-ul.tabs li{ 
-  display:inline; float:left; margin:2px 7px 0 0; font-size:12px; 
-  border:1px #e4e4e4 solid; background:#e4e4e4; 
+
+/* special for wiki moduel */
+
+
+/* special for catalog moduel */
+.wine-icon-list {
+  border-top:1px solid #666;
+  border-bottom:1px solid #666;
+  margin-bottom:10px;
+}
+.wine-icon-list li {
+  border-bottom:1px solid #CCC;
+  padding-top:3px;
+}
+.wine-icon-list li.last {
+  border-bottom:none;
+}
+
+.region-list h2 {
+  font-size:14px;
+  border-bottom:1px solid #666;
+  padding-bottom:8px;
+}
+.region-list h3 {
+  font-size:11px;
+  margin:15px 0px 8px 12px;
+}
+.region-list li {
+  background:url(/images/list_arrow.png) no-repeat;
+  padding-left:12px;
+  margin-bottom:3px;
+}
+.region-list li a {
+  color:#666;
+}
+.region-list li a:hover {
+  text-decoration:underline;
+  color:#7F0019;
+}
+
+.hot-wine-list h2 {
+  font-size:13px;
+  margin:8px 0px;
+}
+.hot-wine-list ul{
+  border:1px solid #CCC;
+}
+.hot-wine-list li {
+  text-align:center;
+  padding:5px 10px;
+}
+.hot-wine-list li img{
+  padding:2px;
+  border:1px solid #f2f2f2;
+}
+
+.wine-search-form .btns {
+  margin-top:10px;
+  vertical-align:middle;
+  text-align:right;
+}
+
+.wine-list {
+  margin-top:20px;
+}
+.wine-list .title {
+  margin:8px 0px;
+}
+.wine-list .sorts {
+  border-top:1px solid #666;
+  background-color:#f6f6f6;
+  height:35px;
+}
+.wine-list .wines ul {
+  margin:0px 0px 15px 4px;
+}
+.wine-list .wines li {
+  float:left;
+  width:155px;
+  text-align:center;
+  padding:5px 10px;
+}
+
+.wine-list .search-wines ul {
+  margin:0px 0px 15px 4px;
+}
+.wine-list .search-wines li {
+  padding:5px 10px;
+  border-bottom:1px solid #CCC;
+  margin:8px 0px;
+}
+.wine-list .search-wines img.small {
+  float:left;
+  margin:5px 10px;
+  padding:2px;
+  border:1px solid #f2f2f2;
+}
+.wine-list .search-wines .detail {
+  float:left;
+  position:absolute;
+  margin:0px 0px 0px 120px;
+}
+.wine-list .search-wines .detail .sale{
+  float:right;
+  position:absolute;
+  margin:0px 0px 0px 380px;
+}
+.wine-list .search-wines .detail .name-en{
+  margin-bottom:5px;
+}
+.wine-list .search-wines .detail a{
+  margin-left:10px;
+  text-decoration:underline;
+}
+.wine-list .search-wines .detail a.name{
+  margin-left:0px;
+  font-weight:bold;
+}
+.wine-list .search-wines .detail span{
+  margin-left:6px;
+}
+
+/* catalogin region detail */
+.region-detail h1 {
+  font-size:20pt;
+}
+.region-detail h1 span{
+  color:#CCC;
+  font-size:16pt;
+}
+.region-detail h1, .region-detail h2 {
+  padding-bottom:10px;
+  border-bottom:1px solid #666;
+  margin:10px 0px;
+}
+.region-detail .google-map {
+  margin-bottom:15px;
+}
+.region-detail .regions li,.region-detail .wineries li {
+  float:left;
+  width:175px;
+  background:url(/images/list_arrow.png) no-repeat;
+  padding-left:12px;margin-bottom:3px;
+}
+.region-detail .regions li a,.region-detail .wineries li a {
+  font-weight:bold;
+  color:#666;
+}
+.region-detail .regions li a:hover,.region-detail .wineries li a:hover {
+  text-decoration:underline;
+  color:#7F0019;
+}
+.region-detail .more {
+  text-align:right;
+  padding-right:10px;
+}
+.region-detail .remark h3 {
+  font-size:13px;
+  font-weight:normal;
+  margin-bottom:5px;
+}
+.region-detail .remark img {
+  float:left;
+  margin:0px 10px 10px 0px;
+}
+
+/* catalog wine detail */
+.wine-detail .info {
+  margin:0px 0px 20px 0px;
+}
+.wine-detail .info .cover {
+  float:left;
+  text-align:center;
+}
+.wine-detail .info .cover .price span{
+  font-size:15px;
+  font-weight:bold;
+  color:#7F0019;
+}
+.wine-detail .info img.large {
+/*  float:left;*/
+  margin:8px 15px 0px 0px;
+}
+.wine-detail .info .metas {
+  float:left;
+  width:300px;
+}
+.wine-detail .info .metas h2 {
+  color:#7F0019;
+}
+.wine-detail .info .metas h4 {
+  margin-bottom:10px;
+}
+.wine-detail .info .metas label {
+  font-weight:bold;
+  font-size:14px;
+  margin-right:10px;
+  width:100px;
+}
+.wine-detail .funs {
+  background:#f4f4f4;
+  padding:12px 8px 6px 8px;
+  margin-bottom:20px;
+}
+.wine-detail .remark {
+  background:#f4f4f4;
+  padding:8px;
+  margin-bottom:25px;
+}
+.wine-detail .remark h3 {
+  margin-bottom:8px;
+  font-weight:bold;
+}
+
+.wine-acts ul {
+	list-style-type: none;
+}
+.wine-acts li {
+	display: inline;
+}
+.wine-acts a {
+	display: block;
+	float: left;
+	width: 70px;
+	height: 24px;
+	background: url(/images/wine_acts.jpg) no-repeat;
+	text-indent: -9999em;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+.wine-acts li#drank a { background-position: 0 0; }
+.wine-acts li#drank a:hover { background-position: 0 -24px; }
+.wine-acts li#drank.active a { background-position: 0 -24px; }
+.wine-acts li#want a { background-position: -70px 0; }
+.wine-acts li#want a:hover { background-position: -70px -24px; }
+.wine-acts li#want.active a { background-position: -70px -24px; }
+.wine-acts li#follow a { background-position: -140px 0; }
+.wine-acts li#follow a:hover { background-position: -140px -24px; }
+.wine-acts li#follow.active a { background-position: -140px -24px; }
+
+/* catalog grape detail */
+.wine-grape .info .metas {
+  float:left;
+  padding:8px;
+  width:180px;
+  border:5px solid #CCC;
+  margin:0px 20px 10px 0px;
+}
+.wine-grape .info .metas img{
+  margin-left:2px;
+}
+.wine-grape h2.title {
+  padding-bottom:10px;
+  border-bottom:1px solid #666;
+  margin:10px 0px;
+}
+
+/* catalog winery detail */
+.wine-winery h1 {
+  font-size:20pt;
+}
+.wine-winery h1 span{
+  color:#CCC;
+  font-size:16pt;
+}
+.wine-winery h1, .wine-winery h2.title {
+  padding-bottom:10px;
+  border-bottom:1px solid #666;
+  margin:10px 0px;
+}
+.wine-winery .google-map {
+  margin-bottom:15px;
+}
+.wine-winery .more {
+  text-align:right;
+  padding-right:10px;
+}
+.wine-winery .remark h3 {
+  font-size:13px;
+  font-weight:normal;
+  margin-bottom:5px;
+}
+.wine-winery .remark img {
+  float:left;
+  margin:0px 10px 10px 0px;
+}
+
+/* special for store and bid moduel */
+.store-cart h1 {
+  font-size:18pt;
+  border-bottom:1px dotted #CCC;
+  padding-bottom:8px;
+}
+.store-cart .carts{
+  margin-top:20px;
+}
+.store-cart .carts h3 {
+   margin-bottom:10px;
+}
+.store-cart .carts table.rec{
+  background-color:#CCC;
+}
+.store-cart .carts table.rec th{
+  color:#FFF;
+  font-size:14px;
+  text-align:center;
+  background-color:#666;
+  padding:8px;
+}
+.store-cart .carts table.rec td{
+  background-color:#FFF;
+  padding:5px;
+}
+.store-cart .carts table.rec td.del{
+  background-color:#f6f6f6;
+}
+.store-cart .carts table.rec .total{
+  background-color:#f5f5f5;
+  margin:3px;
+  padding:12px;
+}
+.store-cart .carts table.rec .total span{
+  color:#FFF;
+  background-color:#a8a8a8;
+  padding:2px 5px;
+  margin:0px 5px;
+}
+.store-cart .carts table.address input{
+  padding:3px 0px;
+  margin:5px 0px;
+}
+.store-cart .intro {
+  padding:15px;
+  background-color:#f6f6f6;
+  margin-top:15px;
+}
+.store-cart .intro .title{
+  float:left;
+  color:#666;
+}
+.store-cart .intro ul{
+  margin-left:80px;
+}
+.store-cart .intro li{
+  background: url(/images/list_dot.png) no-repeat 0 50%;
+  padding-left:20px;
+  padding-top:3px;
+}
+
+
+/* special for account moduel */
+.my h1 {
+  font-size:16pt;
+  margin:15px 0px 5px 0px;
+}
+.my .infos{
+  margin:10px 0px;
+}
+.my .infos .attr{
+  margin:10px 0px 5px 0px;
+}
+.my .infos .attr .avatar{
+  float:left;
+  margin-right:15px;
+}
+.my .infos .attr .desc span{
+  float:left;
+  margin:3px 10px 0px 0px;
+}
+.my .infos h3 a{
+  color:#666;
+}
+
+.my h3.dotline {
+  padding-bottom:8px;
+}
+.my .avatar-list {
+  margin:5px 0px 8px 3px;
+}
+.my .avatar-list li{
+  float:left;
+  margin:8px 6px;
+  width:50px;
+}
+.my .notice-list {
+  margin:5px 0px 20px 3px;
+}
+.my .notice-list li {
+  margin-top:5px;
+}
+.my .event-list {
+  border-top:1px solid #666;
+  border-bottom:1px solid #666;
+  margin-bottom:10px;
+}
+.my .event-list li{
+  padding:8px 5px 8px 5px;
+}
+.my .event-list li.even{
+  background-color:#f7f7f7;
+  border-top:1px solid #ececec;
+  border-bottom:1px solid #ececec;
+}
+.my .event-list li img{
+  float:left;
+  width:20px;
+}
+.my .event-list li .txt{
+  float:left;
+  margin:2px 0px 0px 3px;
+  width:400px;
+}
+.my .event-list li .date{
+  float:right;
+  font-size:9px;
+  color:#666;
+}
+.my .event-list li a,.my .event-list li a:hover {
+  text-decoration:underline;
+  margin:0px 3px;
+}
+
+/* tab style*/
+.my ul.tabs {
+  overflow:hidden; zoom:1; 
+  position:relative; top:1px;
+  border-bottom:1px solid #DDDDDD;
+/*  margin-bottom:20px;*/
+}
+.my ul.tabs li { 
+  display:inline; 
+  float:left; 
+  font-size:12px; 
   border-bottom:none; *padding-top:1px;
 }
-ul.tabs li a{ float:left; color:#727272; padding:4px 6px 2px 6px; background:#e4e4e4;}
-ul.tabs li.current{ border-top:2px solid #CCC; margin-top:0; padding-top:2px; background:#fff;}
-ul.tabs li.current a, ul.tabs li.current a:hover{ 
-  color:#000; background:#fff; font-weight:bold; 
-  cursor:default; text-decoration:none;
+.my ul.tabs li a { 
+  float:left; 
+/*  color:#727272; 
+  background:#e4e4e4;*/
 }
-ul.tabs li a:hover{ background:#c9c9c9;  color:#000;}
-ul.tabs li.for_compose{float:right;}
-div.tabs-container{  padding:10px;border-top:1px solid #DDDDDD; }
+.my ul.tabs li.current { 
+  margin-top:0; 
+  background:#fff;
+}
+.my ul.tabs li.current a, ul.tabs li.current a:hover { 
+  cursor:default; 
+  text-decoration:none;
+}
+.my ul.tabs li a:hover{ 
+  background:#c9c9c9;  color:#000;
+}
+.my ul.tabs li.for_compose{
+  float:right;
+}
+/* account update */
+.my ul.tabs li.current a.account{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_account.jpg) no-repeat;
+}
+.my ul.tabs li a.account{ 
+  height:25px;
+  width:85px;
+  background:transparent url(/images/bg_account.jpg) no-repeat 0px -24px;
+}
+/* upload avatar */
+.my ul.tabs li.current a.avatar{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_avatar.gif) no-repeat 0px -24px;
+}
+.my ul.tabs li a.avatar{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_avatar.gif) no-repeat;
+}
+/* message inbox */
+.my ul.tabs li.current a.inbox{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_msg_inbox.jpg) no-repeat;
+}
+.my ul.tabs li a.inbox{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_msg_inbox.jpg) no-repeat 0px -24px;
+}
+/* message outbox */
+.my ul.tabs li.current a.outbox{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_msg_outbox.jpg) no-repeat 0px -24px;
+}
+.my ul.tabs li a.outbox{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_msg_outbox.jpg) no-repeat;
+}
+/* message notice */
+.my ul.tabs li.current a.notice{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_notice.jpg) no-repeat 0px -24px;
+}
+.my ul.tabs li a.notice{ 
+  height:25px;
+  width:85px;
+  background:url(/images/bg_notice.jpg) no-repeat;
+}
+/* message post */
+.my ul.tabs li.current a.post{ 
+  height:25px;
+  width:125px;
+  background:url(/images/bg_msg_new.jpg) no-repeat;
+}
+.my ul.tabs li a.post{ 
+  height:25px;
+  width:125px;
+  background:url(/images/bg_msg_new.jpg) no-repeat 0px -24px;
+}
+
+/* message style */
+.my .msg-list tr.even td {
+  background:#f2f2f2;
+}
+.my .msg-list th {
+  padding:8px 0px;
+  font-weight:bold;
+  text-align:center;
+  background:#f7f7f7;
+  border-bottom:1px solid #666;
+}
+.my .msg-list tr.bot th{
+  border-top:1px solid #666;
+  border-bottom:none;
+  text-align:left;
+}
+.my .msg-list tr.bot th a {
+  text-decoration:underline;
+  margin:0px 5px;
+}
+.my .msg-list td {
+  padding:8px 0px;
+}
+.my .msg-list td img.avatar {
+  float:left;
+  margin:5px 10px 0px 10px;
+}
+.my .msg-list .title a {
+  font-weight:bold;
+  text-decoration:underline;
+}
+.my .msg-list .date{
+  font-size:9px;
+  color:#666;
+}
+.my .msg-empty {
+  color:#666;
+  margin:50px auto;
+  text-align:center;
+}
+/* my store */
+.my .store-list {
+  border:1px solid #CCC;
+  background-color:#f2f2f2;
+  margin-bottom:20px;
+}
+.my .store-list th {
+  padding:8px;
+  background-color:#666;
+  color:#FFF;
+  text-align:center;
+  font-weight:bold;
+}
+.my .store-list th.last {
+  border-bottom:none;
+}
+.my .store-list td {
+  background-color:#FFF;
+  padding:8px 0px 8px 5px;
+}
+.my .store-list td.last {
+  border-bottom:none;
+}
+.my .msg-detail {
+  border-top:1px solid #666;
+  padding-top:8px;
+}
+.my .msg-detail .title{
+  font-size:13px;
+}
+.my .msg-detail .items {
+  margin-bottom:20px;
+}
+.my .msg-detail .items li {
+  padding:10px 0px;
+  border-bottom:1px solid #CCC;
+}
+.my .msg-detail .items .avatar {
+  float:left;
+  margin-right:15px;
+  text-align:center;
+  width:50px;
+}
+.my .msg-detail .items .txt {
+}
+.my .msg-detail .items .txt .date{
+  margin-bottom:3px;
+  font-size:11px;
+  color:#666;
+}
+
+
+/* special for forum moduel */
+
+.forum .board-list, .forum .hot-user, .forum .hot-topic {
+  margin-bottom:20px;
+}
+.forum .board-list h2, .forum .hot-topic h2 {
+  margin-bottom:5px;
+}
+.forum .board-list ul {
+  border-top:1px solid #666;
+  border-bottom:1px solid #666;
+}
+.forum .board-list li {
+  padding:5px 18px;
+  border-bottom:1px solid #CCC;
+}
+.forum .board-list li.last {
+  border-bottom:none;
+}
+.forum .hot-topic h2, .forum .hot-user h2 {
+  margin-bottom:5px;
+  padding-bottom:5px;
+  border-bottom:1px solid #666;
+}
+.forum .hot-topic li {
+  padding:2px 0px 2px 8px;
+  border-bottom:1px dotted #ccc;
+}
+.forum .hot-user ul {
+  margin:5px 0px 8px 0px;
+}
+.forum .hot-user li{
+  float:left;
+  margin:4px 0px;
+  width:66px;
+}
+
+.forum .topic-list th {
+  border-bottom:1px solid #666;
+  padding:3px;
+  font-weight:bold;
+  text-align:center;
+}
+.forum .topic-list td {
+  border-bottom:1px dotted #CCC;
+  padding:3px 8px 3px 8px;
+}
+.forum .topic-list tr.even td {
+  background-color:#f2f2f2;
+}
+.forum .topic-list td span.up{
+  color:#7F0019;
+  font-weight:bold;
+  margin-right:3px;
+}
+.forum .topic-form th {
+  font-weight:bold;
+  text-align:center;
+}
+.forum .topic-form td {
+  padding:8px;
+}
+.forum .topic-form input {
+  padding:3px 0px;
+}
+.forum .topic-detail tr.even td {
+  background-color:#f2f2f2;
+}
+.forum .topic-detail th {
+  border-bottom:1px solid #666;
+  padding:3px 0px;
+  font-weight:bold;
+  text-align:center;
+}
+.forum .topic-detail td {
+  border-bottom:1px dotted #CCC;
+  padding:5px 8px 15px 8px;
+}
+.forum .topic-detail td .avatar {
+  margin-top:10px;
+}
+.forum .topic-detail td .meta {
+  margin:3px 0px 10px 5px;
+}
+.forum .topic-detail td .meta .date{
+  color:#666;
+}
+.forum .topic-detail td .meta .acts{
+  float:right;
+}
+.forum .topic-detail td .meta .acts a {
+  text-decoration:underline;
+  margin:0px 3px;
+}
+.forum .topic-detail td .txt {
+  margin:0px 5px 0px 5px;
+}
+
+/* special for wiki */
+.wiki-nav {
+  margin-top:10px;
+}
+.wikis {
+  border-top:1px solid #666;
+  border-bottom:2px solid #ccc;
+  margin-bottom:20px;
+}
+.wikis ul {
+  margin:10px 0px;
+}
+.wikis li {
+  border-bottom:1px solid #CCC;
+  padding:5px 0px;
+}
+.wikis li.last {
+  border-bottom:none;
+}
+/* wiki category color container */
+.wikis li .category_1 a,.wikis li .category_2 a,
+.wikis li .category_3 a,.wikis li .category_4 a {
+  color:#fff;
+  font-weight:bold;
+  text-align:center;
+  min-width:75px;
+  width:75px;
+  display:block;
+  float:left;
+  padding:2px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius:3px;
+}
+.wikis li .category_1 a {
+/*  background-color:#a54c5e;*/
+  color:#333;
+  background-color:#fef99d;
+}
+.wikis li .category_2 a {
+/*  background-color:#ff9966;*/
+  background-color:#ff9966;
+}
+.wikis li .category_3 a {
+/*  background-color:#ffcc00;*/
+  background-color:#a54c5e;
+}
+.wikis li .category_4 a {
+  color:#333;
+/*  background-color:#eee6ce;*/
+  background-color:#eee6ce;
+}
+
+.wikis li .txt {
+  width:450px; 
+  float:right;
+}
+.wikis li .txt a {
+  color:#7F0019;
+  font-size:14px;
+}
+.wiki-list {
+  margin-bottom:15px;
+}
+.wiki-list li {
+  padding:8px 0px;
+  border-bottom:1px solid #CCC;
+}
+.wiki-list li .title a {
+  color:#7F0019;
+  font-size:14px;
+  font-weight:bold;
+}
+.wiki-list li .title span {
+  float:right;
+  color:#CCC;
+}
+.wiki-list li.last {
+  border-bottom:none;
+}
+.wiki-detail .txt{
+  margin-bottom:10px;
+}
+.wiki-detail .txt img{
+  float:right;
+  margin-left:10px;
+}
+.wiki-detail .metas {
+  color:#666;
+}
+.wiki-detail .metas .from{
+  color:#999;
+  margin:0px 8px;
+}
+.wiki-detail .metas .keywords{
+  color:#999;
+  margin:0px 8px;
+}
+.wiki-detail .metas .date {
+  color:#999;
+  float:right;
+}
+.wiki-detail .related {
+  margin-bottom:20px;
+}
+.wiki-detail .related li {
+  background:url(/images/list_arrow.png) no-repeat;
+  padding-left:12px;
+  margin-bottom:3px;
+}
+.wiki-detail .related li a {
+  color:#7F0019;
+}
+
+/*added by joey*/
+#f_adv{
+	padding:10px;
+}
+.f_boards{
+	padding:10px;
+}
+.board1{
+	height:38px;
+	width:306px;
+	background:url(/images/fb_1.jpg) no-repeat;
+}
+.board2{
+	height:38px;
+	width:306px;
+	background:url(/images/fb_2.jpg) no-repeat;
+}
+.board3{
+	height:38px;
+	width:306px;
+	background:url(/images/fb_3.jpg) no-repeat;
+}
+.board4{
+	height:38px;
+	width:306px;
+	background:url(/images/fb_4.jpg) no-repeat;
+}
+.board5{
+	height:38px;
+	width:306px;
+	background:url(/images/fb_5.jpg) no-repeat;
+}
+.board6{
+	height:38px;
+	width:306px;
+	background:url(/images/fb_6.jpg) no-repeat;
+}
+.f_board_title{
+	margin-left:120px;
+	line-height:38px;
+	font-size:16px;
+}
+.f_board_content{
+	height:230px;
+	width:286px;
+	padding:10px;
+}
+.f_board_content li{
+
+}
+.f_board_content .f_date_style{
+	text-indent:20px;
+	color:#aaa;
+}
+.f_board_content .f_list_style{
+	background:url(/images/disc.gif) no-repeat 0px 5px; 
+	text-indent:20px;
+	margin-bottom:3px;
+	line-height:22px;
+	border-bottom:1px dotted #ccc;
+}
+.f_board_content .f_list_style.last{
+	background:url(/images/disc.gif) no-repeat 0px 6px; 
+	text-indent:20px;
+	margin-bottom:5px;
+	line-height:24px;
+	border-bottom:none;
+}
+/*end*/
+
+
+/*special for myfriends*/
+.fbox_img{
+	border:0;
+	width: 32px;
+	height: 20px;
+	cursor: pointer;
+	text-indent: -9999px;
+	background: #7f0019 url(/images/small_search.png) no-repeat;	
+}
+
