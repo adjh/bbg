@@ -1,24 +1,27 @@
 #login-wrap
   %ul
-    %li{:id =>'nav-login'}= link_to '登录', login_url
-    %li.punctuation (
-    %li{:id =>'nav-signup'}= link_to '注册', signup_url
-    %li.punctuation= '|'
-    %li{:id =>'nav-forgot-password'}= link_to '忘记密码?', forgot_pwd_url
-    %li.punctuation )
-
-
+    - if logged_in?      
+      %li.username= "欢迎您".concat(link_to current_user.name, "/profiles/raecoo")
+      %li.punctuation (
+      %li= link_to "累积积分 200", '#'
+      %li.punctuation )
+      %li= link_to '退出', logout_url
+    - else
+      %li{:id =>'nav-login'}= link_to '登录', login_url
+      %li.punctuation (
+      %li{:id =>'nav-signup'}= link_to '注册', signup_url
+      %li.punctuation= '|'
+      %li{:id =>'nav-forgot-password'}= link_to '忘记密码?', forgot_pwd_url
+      %li.punctuation )
+      
 #my-links-wrap
-
-/ %ul.clearfix
-/   - if !current_user
-/     %li= link_to t("g.signup"), signup_url
-/     %li= link_to t("g.signin"), login_url
-/   - else
-/     %li
-/       = t("account.welcome")
-/       - content_tag(:span, :class=> gender_color(current_user.sex)) do
-/         = current_user.name
-/     %li= '|'
-/     %li= link_to t("account.setting"), account_url
-/     %li= link_to t("g.logout"), logout_url
+  %ul
+    - if logged_in?
+      %li{:id =>'nav-messages'}= link_to '我的短消息', '/messages'
+      %li.punctuation= '|'
+      %li{:id =>'nav-friends'}= link_to '我的好友', '/friends'
+      %li.punctuation= '|'
+      %li{:id =>'nav-mywines'}= link_to '我的酒柜', '/mysells'
+      %li.punctuation= '|'
+      %li{:id =>'nav-mystore'}= link_to '我的商城', '/mystores'
+    %li{:id =>'nav-cart'}= login_then_link_to(image_tag('cart'), shopcarts_url)

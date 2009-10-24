@@ -2,7 +2,9 @@
 %html{ html_attrs("en_us") }
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
-    %title Wines Site
+    %title= yield(:title) || '杯杯干,最健康的酒品社区网'
+    = yield(:description)
+    = yield(:keywords)
     %link{:href => "/stylesheets/reset.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
     %link{:href => "/stylesheets/layout.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
     %link{:href => "/stylesheets/bbg_v1.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/

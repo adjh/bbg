@@ -16,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # shop related
   map.resources :shops
+  map.resource  :shopcarts
   
   # bid related
   map.resources :bids
