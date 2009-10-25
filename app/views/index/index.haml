@@ -17,20 +17,41 @@
 %div= image_tag('logo.gif',:style=>'margin-bottom:8px;')
 
 #content.fl
-
+  %ul.img_forward.clearfix
+    %li.catalog.fl= link_to image_tag('index_catalog.gif'), catalogs_path
+    %li.club.fr= link_to image_tag('index_club.gif'), forums_path
+  %hr{:size =>'1', :color =>'#CCCCCC'}
+  .clearfix
+  #monocommunity.clearfix
+    %h3
+      %a{:href =>'#'}
+        %img{:src =>'/images/tmp/images_05.gif', :class =>'linkimg'}
+        %img{:src =>'/images/linktext.gif', :class =>'linktext'}
+    %p 用户能便捷地找到喜爱的葡萄酒，并且与朋友们分享美酒人生
+  .module-links
+    %ul
+      %li.fl
+        = link_to image_tag('module_1.gif'), wikis_path
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，分享你的酒品人生！
+      %li.fr
+        = link_to image_tag('module_2.gif'), wikis_path
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，找到你喜爱的酒！
+      %li.fl
+        = link_to image_tag('module_3.gif'), wikis_path
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，了解你想要的酒！  
+      %li.fr
+        = link_to image_tag('module_4.gif'), wikis_path
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，分享你的酒品人生！
+      %li.fl
+        = link_to image_tag('module_5.gif'), wikis_path
+        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，购买你想要的酒！
+    
 #rich-sidebar.fr.clearfix
   #thin-sidebar.fr
     %ul.img-ads-links
       %li= link_to image_tag('tmp/images_06.gif'), '#'
-      %li= link_to image_tag('tmp/links01.gif'), '#'
-      %li= link_to image_tag('tmp/links02.gif'), '#'
-      %li= link_to image_tag('tmp/links03.gif'), '#'
-      %li= link_to image_tag('tmp/links04.gif'), '#'
-      %li= link_to image_tag('tmp/links05.gif'), '#'
-      %li= link_to image_tag('tmp/links06.gif'), '#'
-      %li= link_to image_tag('tmp/links07.gif'), '#'
-      %li= link_to image_tag('tmp/links08.gif'), '#'
-      %li= link_to image_tag('tmp/links09.gif'), '#'
+      - (1..9).each do |i|
+        %li= link_to image_tag("tmp/links0#{i}.gif"), '#'    
   #thin-sidebar.fl
     .fsbox
       = image_tag('fast_search_title.gif', :class =>'title')
@@ -66,7 +87,6 @@
         %li= link_to '皮埃蒙特 Piedmont', '#', :title => '皮埃蒙特 Piedmont'
         %li= link_to '威尼托 Veneto', '#', :title => '威尼托 Veneto'
         %li= link_to '撒丁岛 Sardinia', '#', :title => '撒丁岛 Sardinia'
-  
 
 :javascript
   $(function(){
