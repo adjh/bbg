@@ -1,141 +1,73 @@
 - js('slider')
-
 #loopedSlider.clearfix
   .sliders
     .slides
-      %div
-        %img{:src =>'/sliders/slider_1.jpg', :width =>'870', :height =>'370'}
-      %div
-        %img{:src =>'/sliders/slider_2.jpg', :width =>'870', :height =>'370'}
-      %div
-        %img{:src =>'/sliders/slider_3.jpg', :width =>'870', :height =>'370'}
-      %div
-        %img{:src =>'/sliders/slider_4.jpg', :width =>'870', :height =>'370'}
-      %div
-        %img{:src =>'/sliders/slider_5.jpg', :width =>'870', :height =>'370'}
+      %div= image_tag('/sliders/slider_1.jpg', :width =>'870', :height =>'370')
+      %div= image_tag('/sliders/slider_2.jpg', :width =>'870', :height =>'370')
+      %div= image_tag('/sliders/slider_3.jpg', :width =>'870', :height =>'370')
+      %div= image_tag('/sliders/slider_4.jpg', :width =>'870', :height =>'370')
+      %div= image_tag('/sliders/slider_5.jpg', :width =>'870', :height =>'370')
   %ul.pagination
-    %li
-      %a{:href =>'#'}
-        %img{:src =>'/sliders/slider_1-1.png'}
-    %li
-      %a{:href =>'#'}
-        %img{:src =>'/sliders/slider_2-1.png'}
-    %li
-      %a{:href =>'#'}
-        %img{:src =>'/sliders/slider_3-1.png'}
-    %li
-      %a{:href =>'#'}
-        %img{:src =>'/sliders/slider_4-1.png'}
-    %li
-      %a{:href =>'#'}
-        %img{:src =>'/sliders/slider_5-1.png'}
-  
+    %li= link_to image_tag('/sliders/slider_1-1.png'), '#'
+    %li= link_to image_tag('/sliders/slider_2-1.png'), '#'
+    %li= link_to image_tag('/sliders/slider_3-1.png'), '#'
+    %li= link_to image_tag('/sliders/slider_4-1.png'), '#'
+    %li= link_to image_tag('/sliders/slider_5-1.png'), '#'
 
 %div= image_tag('logo.gif',:style=>'margin-bottom:8px;')
 
-.content.fl.rmargin
-  %ul.img_forward.clearfix
-    %li.catalog.fl= link_to image_tag('index_catalog.gif'),'#'
-    %li.club.fr= link_to image_tag('index_club.gif'),'#'
-  %hr{:size=>'1',:color=>'#CCC'}
-  .clearfix
-    .wine-list.fl
-      .date 2009.09.11
+#content.fl
+
+#rich-sidebar.fr.clearfix
+  #thin-sidebar.fr
+    %ul.img-ads-links
+      %li= link_to image_tag('tmp/images_06.gif'), '#'
+      %li= link_to image_tag('tmp/links01.gif'), '#'
+      %li= link_to image_tag('tmp/links02.gif'), '#'
+      %li= link_to image_tag('tmp/links03.gif'), '#'
+      %li= link_to image_tag('tmp/links04.gif'), '#'
+      %li= link_to image_tag('tmp/links05.gif'), '#'
+      %li= link_to image_tag('tmp/links06.gif'), '#'
+      %li= link_to image_tag('tmp/links07.gif'), '#'
+      %li= link_to image_tag('tmp/links08.gif'), '#'
+      %li= link_to image_tag('tmp/links09.gif'), '#'
+  #thin-sidebar.fl
+    .fsbox
+      = image_tag('fast_search_title.gif', :class =>'title')
+      = image_tag('fast_search_text.gif', :class =>'desc')
+      %form{:id =>'fsearch', :action => '#', :method => 'get'}
+        %p
+          %input{:type =>'text', :name => 'keywords', :size =>'10'}
+          %a{:href =>"javascript:$('#fsearch').submit();"}
+            %img{:src =>'/images/small_search.png', :style =>'margin-left: 5px;'}
+        %p
+          = link_to image_tag('fast_search_link.gif'), catalogs_path, :class =>'custom'
+          = link_to image_tag('help.gif'), '#', :class =>'help'
+    .wineries
       %ul
         %li
-          = image_tag('tmp/images_01.jpg', :class => 'gray-border')
-          = link_to 'Howell Mountain Vineyards...豪威尔山赤霞珠葡萄酒 2006','#'
+          %p= link_to '美酒仙境 —— 玛歌酒庄', '#', :title =>'Chateau Margaux'
+          = link_to image_tag('/images/wineries/56-desc.jpg', :height => '100'), '#', :title =>'Chateau Margaux'
+        %li.line
         %li
-          = image_tag('tmp/images_02.jpg', :class => 'gray-border')
-          = link_to 'Howell Mountain Vineyards...豪威尔山赤霞珠葡萄酒 2006','#'
-        %li
-          = image_tag('tmp/images_03.jpg', :class => 'gray-border')
-          = link_to 'Howell Mountain Vineyards...豪威尔山赤霞珠葡萄酒 2006','#'        
-    .club-list.fr
-      .date 2009.09.04
+          %p= link_to '美酒仙境 —— 玛歌酒庄', '#', :title =>'Chateau Margaux'
+          = link_to image_tag('/images/wineries/56-desc.jpg', :height => '100'), '#', :title =>'Chateau Margaux'
+        %li.last
+    .regions
+      %h1= link_to '法国 France', '#'
       %ul
-        %li
-          = image_tag('tmp/images_01.jpg', :class => 'gray-border')
-          = link_to '以酒会友，希望能给大家建立一个葡萄酒交流平台，共同进步！','#'
-        %li
-          = image_tag('tmp/infimg01.gif', :class => 'gray-border')
-          = link_to '以酒会友，希望能给大家建立一个葡萄酒交流平台，共同进步！','#'
-        %li
-          = image_tag('tmp/images_02.jpg', :class => 'gray-border')
-          = link_to '以酒会友，希望能给大家建立一个葡萄酒交流平台，共同进步！','#'
-        
-  #monocommunity.clearfix
-    %h3
-      %a{:href => '#'}
-        %img.linkimg{:src => '/images/tmp/images_05.gif'}
-        %img.linktext{:src => '/images/linktext.gif'}
-    %p 用户能便捷地找到喜爱的葡萄酒，并且与朋友们分享美酒人生
+        %li= link_to '波尔多 Bordeaux', '#', :title => '波尔多 Bordeaux'
+        %li= link_to '勃艮第 Burgundy', '#', :title => '勃艮第 Burgundy'
+        %li= link_to '香槟区 Champagne', '#', :title => '香槟区 Champagne'
+        %li= link_to '罗纳河谷 Rhone Valley', '#', :title => '罗纳河谷 Rhone Valley'
+      %h1= link_to '意大利 Italy', '#'
+      %ul
+        %li= link_to '托斯卡纳 Tuscany', '#', :title => '托斯卡纳 Tuscany'
+        %li= link_to '皮埃蒙特 Piedmont', '#', :title => '皮埃蒙特 Piedmont'
+        %li= link_to '威尼托 Veneto', '#', :title => '威尼托 Veneto'
+        %li= link_to '撒丁岛 Sardinia', '#', :title => '撒丁岛 Sardinia'
+  
 
-  .module-links
-    %ul
-      %li.fl
-        %a{:href =>''}
-          %img{:src =>'/images/module_1.gif'}
-        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，分享你的酒品人生！      
-      %li.fr
-        %a{:href =>''}
-          %img{:src =>'/images/module_2.gif'}
-        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，找到你喜爱的酒！
-      %li.fl
-        %a{:href =>''}
-          %img{:src =>'/images/module_3.gif'}
-        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，了解你想要的酒！
-      %li.fr
-        %a{:href =>''}
-          %img{:src =>'/images/module_4.gif'}
-        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，分享你的酒品人生！
-      %li.fl
-        %a{:href =>''}
-          %img{:src =>'/images/module_5.gif'}
-        %p 加入杯杯干，寻找你的酒友，建立你的酒友圈子，购买你想要的酒！
-
- 
-.tsidebar.rmargin
-
-  .fsbox
-    %img.title{:src => '/images/searchtitle.gif'}
-    %img.desc{:src => '/images/searchtext.gif'}
-    %form
-      %p
-        %input{:type => 'text', :name => 'keywords', :size =>15, :value => ''}
-        = link_to image_tag('searchbtn.gif', :style => 'margin-left: 2px;'), '#'
-      %p
-        %a.custom{:href => '#'}= image_tag('searchlink.gif')
-        %a.help{:href => '#'}= image_tag('help.gif')
-
-  .wineries
-    %ul
-      - (1..2).each do |id|
-        %li
-          %p= link_to '美酒仙境——瑞事临酒庄','#'
-          %img{:src => "/images/tmp/jz0#{id}.gif"}
-        %li{:class => "#{(id == 2 ? 'last' : 'line')}"}
-        
-  .regions
-
-    %h1= link_to "法国 France",'#'
-    %ul
-      %li= link_to '薄酒 Beaujolais','#'
-      %li= link_to '波尔多 Bordeaux','#'
-      %li= link_to '香槟 Champagne','#'
-    
-    %h1= link_to "加拿大 Canada",'#'
-    %ul
-      %li= link_to '安大略 Ontario','#'
-      %li= link_to '不列颠哥伦比亚 British Columbia','#'
-      %li= link_to '爱德华王子岛 Prince EdwardIsland','#'
-        
-.tsidebar.imglinks
-  %ul
-    %li= image_tag("tmp/images_06.gif")
-    - (1..8).each do |i|
-      %li= link_to image_tag("tmp/links0#{i}.gif"), '#'
-      
 :javascript
   $(function(){
   	$('#loopedSlider').loopedSlider({
