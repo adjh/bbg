@@ -1,5 +1,35 @@
-.flash_content
-  %embed{:src => 'portal.swf',:width => 885, :height => 370,:type => "application/x-shockwave-flash" }
+- js('slider')
+
+#loopedSlider.clearfix
+  .sliders
+    .slides
+      %div
+        %img{:src =>'/sliders/slider_1.jpg', :width =>'870', :height =>'370'}
+      %div
+        %img{:src =>'/sliders/slider_2.jpg', :width =>'870', :height =>'370'}
+      %div
+        %img{:src =>'/sliders/slider_3.jpg', :width =>'870', :height =>'370'}
+      %div
+        %img{:src =>'/sliders/slider_4.jpg', :width =>'870', :height =>'370'}
+      %div
+        %img{:src =>'/sliders/slider_5.jpg', :width =>'870', :height =>'370'}
+  %ul.pagination
+    %li
+      %a{:href =>'#'}
+        %img{:src =>'/sliders/slider_1-1.png'}
+    %li
+      %a{:href =>'#'}
+        %img{:src =>'/sliders/slider_2-1.png'}
+    %li
+      %a{:href =>'#'}
+        %img{:src =>'/sliders/slider_3-1.png'}
+    %li
+      %a{:href =>'#'}
+        %img{:src =>'/sliders/slider_4-1.png'}
+    %li
+      %a{:href =>'#'}
+        %img{:src =>'/sliders/slider_5-1.png'}
+  
 
 %div= image_tag('logo.gif',:style=>'margin-bottom:8px;')
 
@@ -105,3 +135,11 @@
     %li= image_tag("tmp/images_06.gif")
     - (1..8).each do |i|
       %li= link_to image_tag("tmp/links0#{i}.gif"), '#'
+      
+:javascript
+  $(function(){
+  	$('#loopedSlider').loopedSlider({
+  		autoStart: 3000,
+      restart: 5000
+  	});
+  });

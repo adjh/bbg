@@ -5,11 +5,14 @@
     %title= yield(:title) || '杯杯干,最健康的酒品社区网'
     = yield(:description)
     = yield(:keywords)
-    %link{:href => "/stylesheets/reset.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
-    %link{:href => "/stylesheets/layout.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
-    %link{:href => "/stylesheets/bbg_v1.css",:rel=>"stylesheet",:media=>"screen",:type=>"text/css"}/
-    %script{:type =>"text/"+"javascript",:src=> "/javascripts/jquery.js"}= yield :js
-    %script{:type =>"text/"+"javascript",:src=> "/javascripts/bbg_v1.js"}= yield :css
+    %link{:href => "/stylesheets/bbg_v1.css",:rel=>"stylesheet",:type=>"text/css"}/
+    %script{:type =>"text/"+"javascript",:src=> "/javascripts/jquery.js"}
+    %script{:type =>"text/"+"javascript",:src=> "/javascripts/bbg_v1.js"}
+    %script{:type =>"text/"+"javascript",:src=> "/javascripts/roundies.js"}
+    = yield :css
+    = yield :js
+    / [if lt IE 7]
+      %script{:type =>"text/"+"javascript",:src=> "/javascripts/unitpngfix.js"}
   %body
     #header
       .wrapper
