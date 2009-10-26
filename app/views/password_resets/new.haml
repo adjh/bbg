@@ -1,9 +1,10 @@
-%h1= t("account.forgot_password")
+%h1 忘记密码
 %br/
-%p= t("account.reset_password_tip")
+%p 请输入您注册BeiBeiGan使用的邮箱地址
 %br/
 - form_tag password_resets_path do
-  %label= t("account.email")
   = text_field_tag :email
-  = submit_tag t("account.reset_password")
+  %br/
+  %br/
+  = submit_tag "找回密码"
 

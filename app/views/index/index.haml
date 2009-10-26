@@ -18,7 +18,7 @@
 
 #content.fl
   %ul.img_forward.clearfix
-    %li.catalog.fl= link_to image_tag('index_catalog.gif'), catalogs_path
+    %li.catalog.fl= link_to image_tag('index_catalog.gif'), wines_path
     %li.club.fr= link_to image_tag('index_club.gif'), forums_path
   %hr{:size =>'1', :color =>'#CCCCCC'}
   .clearfix
@@ -62,7 +62,7 @@
           %a{:href =>"javascript:$('#fsearch').submit();"}
             %img{:src =>'/images/small_search.png', :style =>'margin-left: 5px;'}
         %p
-          = link_to image_tag('fast_search_link.gif'), catalogs_path, :class =>'custom'
+          = link_to image_tag('fast_search_link.gif'), wines_path, :class =>'custom'
           = link_to image_tag('help.gif'), '#', :class =>'help'
     .wineries
       %ul

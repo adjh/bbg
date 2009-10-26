@@ -9,7 +9,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :wikis
   
   # catalog related
-  map.resources :catalogs
+  # map.resources :catalogs
+  map.resources :wines
+  map.resources :regions
   
   # forum related
   map.resources :forums

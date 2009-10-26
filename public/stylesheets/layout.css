@@ -87,9 +87,9 @@
 li#nav-home a { background-position: 0 0; }
 li#nav-home a:hover { background-position: 0 -28px; }
 li#nav-home.active a { background-position: 0 -56px; }
-li#nav-catalog a { background-position: -93px 0; }
-li#nav-catalog a:hover { background-position: -93px -28px; }
-li#nav-catalog.active a { background-position: -93px -56px; }
+li#nav-wine a { background-position: -93px 0; }
+li#nav-wine a:hover { background-position: -93px -28px; }
+li#nav-wine.active a { background-position: -93px -56px; }
 li#nav-wiki a { background-position: -186px 0; }
 li#nav-wiki a:hover { background-position: -186px -28px; }
 li#nav-wiki.active a { background-position: -186px -56px; }

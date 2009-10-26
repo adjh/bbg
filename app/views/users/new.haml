@@ -1,22 +1,22 @@
 .reg
   %h1= image_tag("reg_title.gif")
   = error_messages_for :user
-  - form_for @user,:user, :url => account_path, :html=>{:class =>'bg'} do |f|
+  - form_for @user,:user, :url => account_path do |f|
     %table{:cellspacing=>0, :cellpadding=>0,:border=>0}
       %tr
-        %th{:width =>150}= t("account.login")
+        %th{:width =>150} 用户名
         %td= f.text_field :login      
       %tr
-        %th= t("account.name")
+        %th 昵称
         %td= f.text_field :name      
       %tr
-        %th= t("account.email")
+        %th 邮箱
         %td= f.text_field :email      
       %tr
-        %th= t("account.password")
+        %th 密码
         %td= f.text_field :password
       %tr
-        %th= t("account.password_confirm")
+        %th 密码确认
         %td= f.text_field :password_confirmation
     .btns.clearfix
       .accept
