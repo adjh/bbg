@@ -1,26 +1,25 @@
 .login
   %h1= image_tag("login_title.gif")
   = error_messages_for :user_session
-  - form_for @user_session, :url => user_session_path(:to => params[:to]), :html=>{:class =>'rborder'} do |f|
+  - form_for @user_session, :url => user_session_path(:to => params[:to]), :html=>{:class =>'rich-gray-border'} do |f|
     %table
       %tr
-        %td{:colspan=>2}= image_tag('login_title_1.gif')
+        %td{:colspan=>2}= image_tag('member_login.gif')
       %tr
-        %td= image_tag('text_login.gif')
+        %td 用户名
         %td= f.text_field :login
       %tr
-        %td= image_tag('text_pwd.gif')
+        %td 密码
         %td= f.password_field :password        
       %tr
         %td &nbsp;
         %td
           = image_submit_tag("login_btn.gif")
-          = link_to '忘记密码', forgot_pwd_url
 
 .reg_desc
-  .rborder
+  .rich-gray-border
     %h1= image_tag("reg_title_1.gif")
-    %h2= image_tag("reg_title_2.gif")
+    %h2= link_to image_tag("reg_title_2.gif"), signup_url
     .txt
       = image_tag("reg_title_3.gif")
       %ul
