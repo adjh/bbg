@@ -1,2 +1,2 @@
-class Admin::ForumsController < ApplicationController
+class Admin::ForumsController < Admin::BaseController
 end
