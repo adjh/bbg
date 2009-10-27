@@ -35,7 +35,24 @@ ActionController::Routing::Routes.draw do |map|
   map.upload_avatar      '/account/avatar',  :controller => "users", :action => "avatar"
   map.change_password '/account/password',:controller => "users", :action => "password"
   
- 
-  # map.connect ':controller/:action/:id'
-  # map.connect ':controller/:action/:id.:format'
+  # management platform routes
+  map.namespace :admin do |admin|
+    
+    admin.resources :contents
+    admin.resources :content_categories
+
+    admin.resources :forums
+    admin.resources :topics
+    
+    admin.resources :products
+    admin.resources :orders
+    
+    admin.resources :wines
+    admin.resources :wineries
+    admin.resources :grapes
+    
+    admin.resources :users
+    
+  end
+  
 end
