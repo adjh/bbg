@@ -1,0 +1,54 @@
+@import url('/stylesheets/reset.css');
+/*
+-------------------------
+-- Flash Notice
+-------------------------
+*/
+ 
+.flash_notice, .flash_error, .flash_warning,
+.flash_success, .flash_explanation {
+  border: 1px solid #ebdfb0;
+  background-color: #fff4c8;
+  padding:5px;
+  color: #000;text-align: center;
+  margin-bottom:10px;
+}
+.flash_error {
+  border: 1px solid #ebb0b0;
+  background-color: #ffc8c8;
+}
+.flash_notice, .flash_success {
+  border: 1px solid #b0ebb0;
+  background-color: #c8ffcb;
+}
+.flash_notice a, .flash_error a, .flash_warning a {
+  color: #01a163;
+  border: none !important;
+}
+.errorExplanation h2 {
+  margin: 0;color: #c00;
+}
+.errorExplanation li {
+  margin-left: 3.0em;font-weight: bolder;
+  list-style: decimal;color: #c00;
+}
+.fieldWithErrors input {
+  background-color: #faa;
+  border: 1px solid #f00;
+}
+
+/* special styles define of the bbg */
+* { word-wrap:break-word; }
+body {
+	background: url(/images/admin_header_bg.jpg) repeat-x;
+	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+}
+a {	text-decoration: none;}
+a:link, a:visited { color:#333; }
+a:active, a:hover { color:#7F0019; }
+a img {border: none;}
+:focus {outline: none;}
+
+/* common style */
+.fl { float:left;}
+.fr { float:right;}
