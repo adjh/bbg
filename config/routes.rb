@@ -38,6 +38,8 @@ ActionController::Routing::Routes.draw do |map|
   # management platform routes
   map.namespace :admin do |admin|
     
+    admin.resource  :dashboards
+    
     admin.resources :contents
     admin.resources :content_categories
 
@@ -52,7 +54,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :grapes
     
     admin.resources :users
-    
+    admin.resources :settings
   end
   
 end

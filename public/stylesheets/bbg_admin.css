@@ -1,54 +1,422 @@
-@import url('/stylesheets/reset.css');
+@charset "utf-8";
+/* 	CSS Rest File - Used to Reset Default Browser Styling 	*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+/* -------------------------------------------------------------------
+THEME FILE
+-------------------------------------------------------------------- */
+
+#header	{
+  background-color: #000000;
+}
+#nav a { 
+  color: #FFFFFF; background-color: #222;
+}
+/* Navigation Hover Styles */	
+#head_wrap #nav a:hover { background-color: #1B63AB; }
+#sub_nav_wrap	{ background-color: #FFFFFF; }
+#primary_content a, #footer a { color: #3C8DDF; }
+#sidebar h3 { background-color: #D9E9F9; border: 1px solid #B6D5F3; }
+#sidebar a { color: #3C8DDF;font-size: 14px;font-weight: bold;}
+#sidebar a:hover { color: #1B5C9E; }
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+  background-color: #D9E9F9;
+  border: 1px solid #B6D5F3;
+  font-size: 9pt;
+  padding: 7px;
+  text-align: left;
+}
+
+/* ---------------------------------------------------------------------------------
+UNIVERSAL (used to set generic classes)
+--------------------------------------------------------------------------------- */
+
+.left	{ float:left;}
+.right { float:right;}
+.clear { clear: both;} 
+.highlight	{ color: #FFFFFF;font-weight: bold;text-decoration: none; }
+
+.check-all-box {
+  float: right;
+  margin: 0px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0px 73px 0px 0px;
+  color: #666666;
+}
+
+#tooltip	{ font-size: 9px;font-weight: bold;}
+#modal p 	{ font-size: 11px; }
+
+
+/* ---------------------------------------------------------------------------------
+TYPOGRAPHY STYLES (generic typography)
+--------------------------------------------------------------------------------- */
+
+body { 
+  font-family: Arial, Helvetica, sans-serif; 
+  background-color: #E7E7E7; 
+  color: #666666; 
+  line-height: 24px; 
+}
+a	{ color:#3C8DDF; }
+
+h1,h2,h3,h4,h5,h6	{ 
+  color: #333333; padding: 10px 0px 10px 0px; 
+  font-weight: bold;
+}
+
+ol { list-style-type: lower-roman;}
+dt { font-weight: bold;text-decoration: underline;font-size: 14px;margin-top: 5px;margin-bottom: 5px;} 
+dd { font-size: 12px;color: #666666;padding: 5px 0px 10px 10px;margin: 0px 0px 0px 10px; }
+
+blockquote {
+  margin:22px 40px;
+  color:#575757;
+  padding: 0px 50px;
+  background: transparent url("/images/admin/blockquote.gif") no-repeat 0 0;
+}
+
+/* ---------------------------------------------------------------------------------
+Flash NOTIFICATIONS
+--------------------------------------------------------------------------------- */
+.flash_notice, .flash_error, .flash_info, .flash_warning, .flash_explanation {
+/*  margin-top: 15px; margin-bottom: 15px;*/
+  background-repeat: no-repeat; 
+  background-position: 10px center;
+  padding: 10px 10px 10px 40px;
+  height: 20px;line-height: 20px;
+  font-weight: bold; font-size: 11px;
+/*  text-transform: uppercase; */
+}
+/* Succes Notification Box */
+.flash_notice {
+  background-color: #E3FFDF;
+  border: 1px solid #97FF88;
+  color: #009900;
+  background-image:url(/images/admin/accept.png);
+}
+/* Failure Notification Box */
+.flash_error {
+  background-color: #FFE1E1;
+  border: 1px solid #FF9595;
+  color: #CC3300;
+  background-image:url(/images/admin/cancel.png);
+}
+/* Information Notification Box */
+.flash_info {
+  background-color: #D7DFFF;
+  border: 1px solid #93A8FF;
+  color: #0033FF;
+  background-image:url(/images/admin/information.png);
+}
+/* Warning Notification Box */
+.flash_warning { 
+  background-color: #FFFBCC; 
+  border: 1px solid #FFF35E;
+  color: #C69E00; 
+  background-image:url(/images/admin/error.png);
+}
+.fieldWithErrors {
+  color:#f00;
+}
+
+/* ---------------------------------------------------------------------------------
+GENERAL LAYOUT (header wrap, header and logo)
+--------------------------------------------------------------------------------- */
+
+#head_wrap	{ width: 940px;height: 100%;margin: 15px auto 0px auto;padding: 0px 0px 0px 20px;}
+
+/* Active Navigation Hover Styles */
+#head_wrap #nav .active, 
+#head_wrap #nav .active:hover 
+{ background-color: #FFFFFF;color: #222222;}
+
+#header		{ overflow: hidden; background-image: url(/images/admin/header_highlighter.png); background-repeat: repeat-x;}
+
+#logo { margin:5px 0px 15px 0px;}
+#logo a{
+  color:#FFF;font-size:22px;
+  text-decoration:none;
+}
+
+/* ---------------------------------------------------------------------------------
+NAVIGATION (navigation tabs and submenu)
+--------------------------------------------------------------------------------- */
+
+#nav	{
+  position: relative;
+  height: 31px;
+}
+#nav li 	{ 
+  display: inline;
+  padding: 0px;margin: 0px; 
+}
+#nav li.alone {
+  float:right;
+}
+#nav li.alone a {
+  background-color: #1B63AB;
+}
+#nav a 	{
+  float: left;display: block;
+  font-size: 12px; font-weight: bold; text-decoration: none;
+  height: 25px;
+  line-height: 25px;
+  padding: 3px 10px 3px 10px;
+  margin: 0px 5px 0px 0px;
+  background-image: url(/images/admin/button_highlighter.png);
+  background-repeat: repeat-x;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-left-radius:2px;
+  -webkit-border-top-right-radius:2px;
+  -khtml-border-radius-topleft: 2px;
+  -khtml-border-radius-topright: 2px;
+}
+
+#sub_nav_wrap	{ 
+  padding: 8px; 
+  clear: both; 
+  border-bottom: 2px solid #ccc; 
+  margin: 0px; 
+}
+#sub_nav { 
+  width: 940px; 
+  margin: 0px auto 0px auto; 
+  padding: 0px 0px 0px 20px; 
+}
+#sub_nav li { display: inline;}
+#sub_nav a { 
+  border-right: 1px solid #CCC; 
+  padding: 0px 10px 0px 10px; 
+  color: #999999; 
+  font-size: 12px; 
+  text-decoration: none;
+}
+#sub_nav a.last { border: none; }
+#sub_nav a:hover { text-decoration: underline; }
+#sub_nav .active { font-weight: bold; color: #222;}
+
+
+#login			{ margin-top: 5px; margin-bottom: 20px; }
+#login p 		{ color: #CCCCCC; font-size: 11px; margin: 0px; padding: 0px; }
+
+/* ---------------------------------------------------------------------------------
+CONTENT (where the content is wrapped)
+--------------------------------------------------------------------------------- */
+#content_wrapper {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  margin: 20px auto 10px auto;
+  padding: 30px 24px 30px 29px;	
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  width: 905px; height: 100%;
+}
+
+/* ---------------------------------------------------------------------------------
+PRIMARY CONTENT (including typography & Modal Box Styling)
+--------------------------------------------------------------------------------- */
+
+#primary_content 
+#placeholder 		{ height: 200px; width: 625px; margin-top: 10px; margin-bottom: 10px; font-size: 80%; color: #CCCCCC; }
+
+#primary_content 	{ float: left;width: 625px; }
+
+#primary_content h1, 
+#modal h1 			{ font-size: 24px; margin: 0px 0px 3px 0px; padding: 0px 0px 10px 0px;}
+
+#primary_content h2, 
+#modal h2			{ font-size: 20px; margin: 5px 0px 10px 0px; border-bottom: 2px solid #d6d6d6; padding: 5px 0px 7px 0px;}
+
+#primary_content h3, 
+#modal h3 			{ font-size: 18px;font-weight: bold;color: #222; margin-bottom: 7px; margin-top: 7px;}
+
+#primary_content h4 , 
+#modal h4			{ font-size: 15px;color: #333333;text-transform: uppercase; margin-bottom: 10px;  padding: 0px; }
+
+#primary_content h5, 
+#modal h5 			{ font-size: 15px; margin-bottom: 10px; text-transform: uppercase; color: #999999; padding: 0px;}
+
+#primary_content h6 	{ font-size: 14px; margin-bottom: 5px; text-transform: uppercase; color: #999999;}
+
+#primary_content p 	{ font-size: 12px; padding: 0px; margin: 0px 0px 7px 0px;}
+#primary_content ol 	{ padding-left: 10px; list-style-type: decimal; font-size: 12px; margin: 7px;}
+#primary_content ul 	{list-style-type: disc; padding-left: 10px; font-size: 12px; margin: 5px 7px 7px 7px;}
+#primary_content li 	{ color: #666666; margin-top: 5px; margin-bottom: 5px;}
+
+/* ---------------------------------------------------------------------------------
+SIDEBAR
+--------------------------------------------------------------------------------- */
+
+#sidebar { 
+  float: right; width: 250px; 
+}
+#sidebar h3 { 
+  padding: 7px; font-size: 15px; font-weight: bold; 
+  color: #333333; 
+  margin: 0px 0px 10px 0px;
+}	
+#sidebar img {
+  float: left; margin-right: 12px;
+}
+#sidebar li { 
+  clear: both; 
+  margin: 5px 0px 5px 0px; 
+  border-bottom: 1px solid #E6E6E6; 
+  padding: 3px 0px 10px 0px;
+}
+#sidebar li:last-child 	{ 
+  border-bottom-color: #FFFFFF;
+}
+#sidebar li.last { 
+  border-bottom-color: #FFFFFF;
+}
+#sidebar p { 
+  font-size: 11px; 
+  color: #999999; 
+  font-weight: bold; 
+  margin: 0px; padding: 0px;
+}
+
+/* ---------------------------------------------------------------------------------
+FOOTER
+--------------------------------------------------------------------------------- */
+#footer {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  width: 905px;
+  font-size: 70%;
+  margin: 20px auto 10px auto;
+  padding: 15px 24px 15px 29px;
+  line-height: 15px;
+}
+
+
+
+/* ---------------------------------------------------------------------------------
+FORMS
+--------------------------------------------------------------------------------- */
+.small			{ width: 15%;}
+.medium 			{ width: 35%;}
+.large			{ width: 80%;}
+.full			{ width: 98%;}
+
+form label { 
+  display: block; 
+  font-weight: bold; font-size: 13px; 
+  margin:12px 0px 0px 0px;
+}
+form p { padding: 0px; margin: 0px;}
+form input { 
+  margin: 0px 10px 0px 0px;
+  border: 1px solid #CCCCCC;padding: 5px;
+  background-color: #F3F3F3; 
+}
+form select { padding: 0px;margin: 0px;}
+
+form .button	{
+  background-color: #D6D6D6;
+  color: #666666;
+  font-weight: bold;
+  border: 1px solid #CCCCCC;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding: 5px 7px 5px 7px;
+}
+
+form .checkbox 				{ padding: 0px;height: 15px;width: 18px;margin: 0 5px 0 5px;}
+form .select					{ width: 20%;padding: 2px;margin: 0px;}
+form .radio					{ height: 15px; width: 15px; padding: 0px; margin: 0 5px 0 5px;}
+
+.styled_textarea			{ margin-bottom: 10px; background-color: #F3F3F3; width: 95%; padding: 0px; border: 1px solid #CCCCCC;}
+input:focus, textarea:focus	{ background-color: #FFFFE1; border: 1px solid #999999;}
+
+/* ---------------------------------------------------------------------------------
+TABLES
+--------------------------------------------------------------------------------- */
+#myTable img	{ argin-right: 3px;margin-left: 3px;padding: 0px;}
+
+table.tablesorter { border: 1px solid #CCCCCC; font-size: 8pt; width: 100%; text-align: left;margin: 8px 0 5px 0;}
+
+table.tablesorter thead tr .header {
+/*  background-image: url(/images/admin/bg.gif);*/
+  background-repeat: no-repeat;
+  background-position: center right;
+/*  cursor: pointer;*/
+  padding-left: 10px;
+}
+table.tablesorter tbody td {
+  color: #666666;
+  background-color: #FFF;
+  vertical-align: top;
+  border-bottom: 1px solid #CCC;
+  padding: 7px;
+  line-height: 20px;
+  border-right: 1px solid #CCC;
+}
+
+
+table.tablesorter tbody tr.odd td 			{ background-color:#E9E9E9; }
+table.tablesorter thead tr .headerSortUp 		{ background-image: url(/images/admin/asc.gif); }
+table.tablesorter thead tr .headerSortDown 	{ background-image: url(/images/admin/desc.gif); }
+
+.paginator 				{ list-style : none; display : block; padding: 8px 0 0 0; text-align: right; clear: both; margin: 0px;} 
+.paginator li 				{ display : inline;} 
+.paginator li a 			{ padding: 4px 7px 4px 7px;font-size: 11px;text-decoration: none; } 
+.paginator li a:hover 		{ background-color: #d6d6d6; text-decoration: underline; } 
+.paginator li.current a 	{ background-color: #d6d6d6; text-decoration: underline;}
 /*
 -------------------------
--- Flash Notice
+-- Pagination
 -------------------------
 */
- 
-.flash_notice, .flash_error, .flash_warning,
-.flash_success, .flash_explanation {
-  border: 1px solid #ebdfb0;
-  background-color: #fff4c8;
-  padding:5px;
-  color: #000;text-align: center;
-  margin-bottom:10px;
+
+.pagination {
+  padding: 3px !important;margin: 3px !important;
+  text-align:right;
+  font-size:11px;
 }
-.flash_error {
-  border: 1px solid #ebb0b0;
-  background-color: #ffc8c8;
+.pagination .prev_page, .pagination .next_page {
+/*  border:none;*/
 }
-.flash_notice, .flash_success {
-  border: 1px solid #b0ebb0;
-  background-color: #c8ffcb;
+.pagination a {
+  padding: 4px 5px;
+  margin: 2px;color: #63c8d6;
+  text-decoration: none;
 }
-.flash_notice a, .flash_error a, .flash_warning a {
-  color: #01a163;
-  border: none !important;
+.pagination a:hover, .pagination a:active {
+  background-color: #d6d6d6;
+  color: #FFF;
 }
-.errorExplanation h2 {
-  margin: 0;color: #c00;
+.pagination span.current {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;font-weight: bold;
+  background-color: #d6d6d6; 
+  text-decoration: underline;
 }
-.errorExplanation li {
-  margin-left: 3.0em;font-weight: bolder;
-  list-style: decimal;color: #c00;
-}
-.fieldWithErrors input {
-  background-color: #faa;
-  border: 1px solid #f00;
+.pagination span.disabled {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;color: #999; 
 }
 
-/* special styles define of the bbg */
-* { word-wrap:break-word; }
-body {
-	background: url(/images/admin_header_bg.jpg) repeat-x;
-	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
-}
-a {	text-decoration: none;}
-a:link, a:visited { color:#333; }
-a:active, a:hover { color:#7F0019; }
-a img {border: none;}
-:focus {outline: none;}
 
-/* common style */
-.fl { float:left;}
-.fr { float:right;}
+#login_wrapper { 
+  background-color: #FFFFFF; 
+  width: 400px; margin: 200px auto 0px auto; 
+  padding: 15px 20px 15px 20px; 
+  border: 5px solid #CCC;
+}
+
+#login_wrapper h1 {
+  font-size:20px; 
+  padding: 3px 0 3px 0px; 
+  margin: 0px;
+}

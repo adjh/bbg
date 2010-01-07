@@ -2,45 +2,34 @@
 %html{ html_attrs("en_us") }
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
-    %title= yield(:title) || '杯杯干网站管理系统'
-    = yield(:description)
-    = yield(:keywords)
-    %link{:href => "/stylesheets/bbg_admin.css",:rel=>"stylesheet",:type=>"text/css"}/
-    %script{:type =>"text/"+"javascript",:src=> "/javascripts/jquery.js"}
-    %script{:type =>"text/"+"javascript",:src=> "/javascripts/bbg_admin.js"}
-    %script{:type =>"text/"+"javascript",:src=> "/javascripts/roundies.js"}
+    %title= t('admin.title')
+    = stylesheet_link_tag('bbg_admin')
+    = javascript_include_tag('jquery','bbg_admin')
     = yield :css
     = yield :js
-    / [if lt IE 7]
-      %script{:type =>"text/"+"javascript",:src=> "/javascripts/unitpngfix.js"}
   %body
     #header
-      .wrapper
-        #logo-wrap
-          %a.hide-text{:id => 'logo', :href => '/'}杯杯干
-          %a{:id => 'nav-help', :href => '/faq'}帮助
-        #navigation
-          %ul.clearfix
-            - tabs_tag(:builder => MenuTabBuilder) do |tab|
-              = tab.home    '首页',    '/' 
-              = tab.wine    '酒品目录',  '/wines'
-              = tab.wiki    '酒品百科',  '/wikis'
-              = tab.shop    '网络商城',  '/shops'
-              = tab.forum   '电子社区',  '/forums'
-              = tab.bid     '拍卖',    '/bids'
-        #my= render :partial => 'users/bar'
+      #head_wrap
+        #logo= link_to t('admin.title'), '#'
+        #nav
+          %ul
+            - tabs_tag(:builder => NavsTabBuilder::AdminTabs) do |tab|
+              = tab.dashboard t("admin.menu.dashboard"),  admin_dashboards_path
+              = tab.wines     t("admin.menu.wines"),   admin_wines_path
+              = tab.contents  t("admin.menu.contents"), admin_contents_path
+              = tab.forums    t("admin.menu.forums"),  admin_forums_path
+              = tab.products  t("admin.menu.products"),   admin_products_path
+              = tab.users     t("admin.menu.users"),   admin_users_path
+              = tab.settings  t("admin.menu.settings"),  admin_settings_path
+            %li.alone= link_to t("admin.menu.gohomepage"), root_url
+    #sub_nav_wrap
+      #sub_nav= render :partial => "subnav"
     
-    #container.wrapper.clearfix
-      - content_tag(:div, :id => "flash") do
-        - flash.each do |key, value|
-          - content_tag(:div, :class=> "flash_#{key}") do
-            = value
+    #content_wrapper
+      - flash.each do |key, value|
+        - content_tag(:div, :class=> "flash_#{key}") do
+          = value
       = @content_for_layout
-      
-    #ft.wrapper
-      %ul
-        %li.start= link_to '购物保障', '#'
-        %li= link_to '服务条款', '#'
-        %li= link_to '安全说明', '#'
-        %li= link_to '隐私声明', '#'
-        %li= 'Copyright @ 2009 BeiBeiGan.com'
+                            
+    #footer
+      %p © Copyright 2009 | www.beibeigan.com

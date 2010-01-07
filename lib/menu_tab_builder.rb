@@ -10,3 +10,11 @@ class MenuTabBuilder < TabsOnRails::Tabs::Builder
   
   
 end
+
+class AdminTabBuilder < TabsOnRails::Tabs::Builder
+  def tab_for(tab, name, options)
+    @context.content_tag(:li) do
+      @context.link_to(name, options, :class => current_tab?(tab) ? "active" : nil)
+    end
+  end
+end
