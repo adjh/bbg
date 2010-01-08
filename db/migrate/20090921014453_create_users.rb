@@ -9,13 +9,15 @@ class CreateUsers < ActiveRecord::Migration
       t.string   :crypted_password,                    :null => false
       t.string   :password_salt,                       :null => false
       t.string   :persistence_token,                   :null => false
+      t.string   :single_access_token,                 :null => false
       t.string   :perishable_token,    :default =>'',  :null => false
-      t.integer  :login_count,         :default => 0,  :null => false
-      t.string   :last_login_ip
-      t.string   :current_login_ip
-      t.datetime :last_request_at
-      t.datetime :current_login_at
-      t.datetime :last_login_at
+      t.integer  :score,  :default => 0
+      # t.integer  :login_count,         :default => 0,  :null => false
+      # t.string   :last_login_ip
+      # t.string   :current_login_ip
+      # t.datetime :last_request_at
+      # t.datetime :current_login_at
+      # t.datetime :last_login_at
       t.string   :avatar_file_name
       t.string   :avatar_content_type
       t.integer  :avatar_file_size
@@ -26,8 +28,9 @@ class CreateUsers < ActiveRecord::Migration
     add_index :users, :login
     add_index :users, :email
     add_index :users, :persistence_token
+    add_index :users, :single_access_token
     add_index :users, :perishable_token
-    add_index :users, :last_request_at
+    # add_index :users, :last_request_at
   end
 
   def self.down
