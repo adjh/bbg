@@ -42,6 +42,7 @@ ActionController::Routing::Routes.draw do |map|
     
     admin.resources :contents
     admin.resources :content_categories
+    admin.resources :attacheds
 
     admin.resources :forums
     admin.resources :topics
