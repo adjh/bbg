@@ -1,0 +1,25 @@
+.input
+  %h2 中文酒名
+  = f.text_field :name_cn,  :class => 'text'
+.input
+  %h2 英文酒名
+  = f.text_field :name_cn,  :class => 'text'
+.multiple_select
+  = f.select :wine_type_id, %w{}, :include_blank => '请选择酒品类型'
+  = f.select :region_id, %w{}, :include_blank => '请选择酒品产地'
+  = f.select :winery_id, %w{}, :include_blank => '请选择生产酒庄'
+.textarea
+  %h2 酒品描述
+  = f.text_area :description, :rows => 8, :cols => 60
+.multiple_input
+  %span 生产年份
+  = f.text_field :vintage, :size => 10
+  %span 容量
+  = f.text_field :capacity, :size => 10
+  %span 度数
+  = f.text_field :degree, :size => 10
+.input
+  %h2 
+    标签
+    %span (请以空格进行分隔)
+  = f.text_field :name_cn,  :class => 'text'
