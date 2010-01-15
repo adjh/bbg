@@ -1,0 +1,15 @@
+.input
+  %h2 中文名称
+  = f.text_field :name_cn,  :class => 'text'
+.input
+  %h2 常见别名
+  = f.text_field :alias_cn,  :class => 'text'  
+.input
+  %h2 英文名称
+  = f.text_field :name_en,  :class => 'text'
+.textarea
+  %h2 原料描述
+  = f.text_area :description, :rows => 4, :cols => 60
+.input
+  %h2 气味
+  = f.text_field :smell,  :class => 'text'

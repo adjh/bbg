@@ -6,10 +6,8 @@
         %span
           %a{:href => admin_wines_path}= t('admin.return.winery_list')
     .body
-      d
-      d
-      d
-      d
-      d
-      d
+      - form_for @winery, :url => admin_wineries_path do |f|
+        = render :partial => "form", :locals => {:f => f}
+        .submit
+          = f.submit "发布当前酒庄信息"
   #main_bot

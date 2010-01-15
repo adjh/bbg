@@ -1,0 +1,16 @@
+.multiple_select
+  = f.select :region_id, %w{}, :include_blank => '请选择酒庄所在地'
+.input
+  %h2 中文名称
+  = f.text_field :name_cn,  :class => 'text'
+.input
+  %h2 英文名称
+  = f.text_field :name_en,  :class => 'text'
+.textarea
+  %h2 原料描述
+  = f.text_area :description, :rows => 4, :cols => 60
+.multiple_input
+  %span 地图坐标纬度
+  = f.text_field :latitude, :size => 15
+  %span 地图坐标经度
+  = f.text_field :longitude, :size => 15
