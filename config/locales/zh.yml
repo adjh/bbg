@@ -94,6 +94,27 @@ zh:
       products:  '商城管理'
       users:     '用户管理'
       settings:  '系统管理'
-      
       gohomepage: '返回网站首页'
       
+    caption:
+      comments: '评论管理'
+      
+      wines:  '酒品管理'
+      wine_add: '添加酒品信息'
+      
+      grapes: '原料管理'
+      grape_add:  '添加原料信息'
+      
+      wineries: '酒庄管理'
+      winery_add: '添加酒庄信息'
+      
+    action:
+      add_wine: '添加酒品'
+      add_grape:  '添加原料'
+      add_winery: '添加酒庄'
+      
+      
+    return:
+      wine_list:  '返回酒品列表'
+      grape_list: '返回原料列表'
+      winery_list:  '返回酒庄列表'

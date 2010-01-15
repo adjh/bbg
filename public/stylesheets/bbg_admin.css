@@ -216,6 +216,7 @@ CONTENT (where the content is wrapped)
   overflow: hidden;
   clear: both;
   width: 920px; height: 100%;
+  margin-bottom:0px;
 }
 
 #content, #columns #main {
@@ -224,7 +225,7 @@ CONTENT (where the content is wrapped)
 #content_bot, #columns #main_bot {
   background:transparent url(/images/admin/bottom-bg.gif) no-repeat scroll right top;
   height:7px;
-  margin-bottom:15px;
+/*  margin-bottom:15px;*/
 }
 #content .caption, #columns #main .caption {
   background:#EDF3FE none repeat scroll 0 0;
@@ -232,12 +233,21 @@ CONTENT (where the content is wrapped)
   padding:10px 30px 10px 23px;
 }
 #content .caption h1, #columns #main .caption h1 {
+  font-size:16px;
   color:#000;
   margin:0px;
   padding:0px;
 }
 #content .caption h1 span, #columns #main .caption h1 span {
   float:right;
+}
+#content .caption h1 span a, #columns #main .caption h1 span a {
+  font-size:14px;
+  font-weight:normal;
+  text-decoration:none;
+}
+#content .caption h1 span a:hover, #columns #main .caption h1 span a:hover {
+  text-decoration:underline;
 }
 #content .body, #columns #main .body {
   padding:10px 60px 10px 23px;
@@ -254,84 +264,12 @@ CONTENT (where the content is wrapped)
 }
 
 /* ---------------------------------------------------------------------------------
-PRIMARY CONTENT (including typography & Modal Box Styling)
---------------------------------------------------------------------------------- */
-
-#primary_content 
-#placeholder 		{ height: 200px; width: 625px; margin-top: 10px; margin-bottom: 10px; font-size: 80%; color: #CCCCCC; }
-
-#primary_content 	{ float: left;width: 625px; }
-
-#primary_content h1, 
-#modal h1 			{ font-size: 24px; margin: 0px 0px 3px 0px; padding: 0px 0px 10px 0px;}
-
-#primary_content h2, 
-#modal h2			{ font-size: 20px; margin: 5px 0px 10px 0px; border-bottom: 2px solid #d6d6d6; padding: 5px 0px 7px 0px;}
-
-#primary_content h3, 
-#modal h3 			{ font-size: 18px;font-weight: bold;color: #222; margin-bottom: 7px; margin-top: 7px;}
-
-#primary_content h4 , 
-#modal h4			{ font-size: 15px;color: #333333;text-transform: uppercase; margin-bottom: 10px;  padding: 0px; }
-
-#primary_content h5, 
-#modal h5 			{ font-size: 15px; margin-bottom: 10px; text-transform: uppercase; color: #999999; padding: 0px;}
-
-#primary_content h6 	{ font-size: 14px; margin-bottom: 5px; text-transform: uppercase; color: #999999;}
-
-#primary_content p 	{ font-size: 12px; padding: 0px; margin: 0px 0px 7px 0px;}
-#primary_content ol 	{ padding-left: 10px; list-style-type: decimal; font-size: 12px; margin: 7px;}
-#primary_content ul 	{list-style-type: disc; padding-left: 10px; font-size: 12px; margin: 5px 7px 7px 7px;}
-#primary_content li 	{ color: #666666; margin-top: 5px; margin-bottom: 5px;}
-
-/* ---------------------------------------------------------------------------------
-SIDEBAR
---------------------------------------------------------------------------------- */
-
-#sidebar { 
-  float: right; width: 250px; 
-}
-#sidebar h3 { 
-  padding: 7px; font-size: 15px; font-weight: bold; 
-  color: #333333; 
-  margin: 0px 0px 10px 0px;
-}	
-#sidebar img {
-  float: left; margin-right: 12px;
-}
-#sidebar li { 
-  clear: both; 
-  margin: 5px 0px 5px 0px; 
-  border-bottom: 1px solid #E6E6E6; 
-  padding: 3px 0px 10px 0px;
-}
-#sidebar li:last-child 	{ 
-  border-bottom-color: #FFFFFF;
-}
-#sidebar li.last { 
-  border-bottom-color: #FFFFFF;
-}
-#sidebar p { 
-  font-size: 11px; 
-  color: #999999; 
-  font-weight: bold; 
-  margin: 0px; padding: 0px;
-}
-
-/* ---------------------------------------------------------------------------------
 FOOTER
 --------------------------------------------------------------------------------- */
 #footer {
-  background-color: #FFFFFF;
-  border: 1px solid #CCCCCC;
-  position: relative;
-  overflow: hidden;
-  clear: both;
-  width: 900px;
+  width: 920px;
   font-size: 70%;
-  margin: 20px auto;
-  padding: 15px 10px;
-  line-height: 15px;
+  margin: 0px auto;
 }
 
 
