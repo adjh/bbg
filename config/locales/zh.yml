@@ -85,7 +85,7 @@ zh:
   
   
   admin:
-    title:  'BBG网站后台管理系统'
+    title:  'BBG网站后台'
     menu:
       dashboard: '后台首页'
       wines:     '目录管理'
@@ -118,3 +118,9 @@ zh:
       wine_list:  '返回酒品列表'
       grape_list: '返回原料列表'
       winery_list:  '返回酒庄列表'
+      
+  formtastic:
+      labels:
+        wine:
+          name_cn:  '中文酒名'
+  

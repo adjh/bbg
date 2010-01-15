@@ -282,6 +282,48 @@ FORMS
 .large			{ width: 80%;}
 .full			{ width: 98%;}
 
+form .input, form .textarea, form .multiple_select,form .multiple_input {
+  margin:15px 0px;
+}
+form .multiple_select select {
+  margin-right:15px;
+}
+form .multiple_input span {
+  color:#000;
+  margin-right:5px;
+}
+form .multiple_input input {
+  margin-right:15px;
+}
+form .multiple_input .auto_text {
+  width:150px;
+}
+
+form .submit {
+  border-top:1px dashed #CCCCCC;
+  margin-top:15px;
+  padding-top:10px;
+}
+form h2 {
+  color:#000000;
+  font-family:"Lucida Grande",verdana;
+  font-size:14px;
+  font-weight:normal;
+  margin:0 0 5px;
+  padding:0;
+}
+form h2 span {
+  color:#666666;
+  font-size:12px;
+  font-weight:normal;
+}
+form input.text {
+  font-size:18px;
+  font-weight:bold;
+  width:80%;
+}
+
+/*
 form label { 
   display: block; 
   font-weight: bold; font-size: 13px; 
@@ -295,7 +337,7 @@ form input {
 }
 form select { padding: 0px;margin: 0px;}
 
-form .button	{
+form .button  {
   background-color: #D6D6D6;
   color: #666666;
   font-weight: bold;
@@ -305,12 +347,12 @@ form .button	{
   padding: 5px 7px 5px 7px;
 }
 
-form .checkbox 				{ padding: 0px;height: 15px;width: 18px;margin: 0 5px 0 5px;}
-form .select					{ width: 20%;padding: 2px;margin: 0px;}
-form .radio					{ height: 15px; width: 15px; padding: 0px; margin: 0 5px 0 5px;}
+form .checkbox        { padding: 0px;height: 15px;width: 18px;margin: 0 5px 0 5px;}
+form .select          { width: 20%;padding: 2px;margin: 0px;}
+form .radio         { height: 15px; width: 15px; padding: 0px; margin: 0 5px 0 5px;}
 
-.styled_textarea			{ margin-bottom: 10px; background-color: #F3F3F3; width: 95%; padding: 0px; border: 1px solid #CCCCCC;}
-input:focus, textarea:focus	{ background-color: #FFFFE1; border: 1px solid #999999;}
+.styled_textarea      { margin-bottom: 10px; background-color: #F3F3F3; width: 95%; padding: 0px; border: 1px solid #CCCCCC;}*/
+
 
 /* ---------------------------------------------------------------------------------
 TABLES
