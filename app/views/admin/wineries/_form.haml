@@ -14,3 +14,10 @@
   = f.text_field :latitude, :size => 15
   %span 地图坐标经度
   = f.text_field :longitude, :size => 15
+.multiple_file_selector_container
+  = image_tag('admin/attachment_block_icon.gif', :clas => 'paperclip')
+  .indented
+    %h2 
+      酒庄图片
+      %span (单个文件不得大于2M)
+    = f.file_field  :avatar  

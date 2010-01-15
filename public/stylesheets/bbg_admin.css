@@ -298,6 +298,20 @@ form .multiple_input input {
 form .multiple_input .auto_text {
   width:150px;
 }
+form .multiple_file_selector_container {
+  
+}
+form .multiple_file_selector_container img.paperclip {
+  float:left;
+  height:59px;
+  width:19px;
+}
+form .multiple_file_selector_container .indented {
+  width:515px;
+  float:right;
+  margin-left:30px;
+  padding-top:8px;
+}
 
 form .submit {
   border-top:1px dashed #CCCCCC;

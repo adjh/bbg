@@ -23,3 +23,10 @@
     标签
     %span (请以空格进行分隔)
   = f.text_field :name_cn,  :class => 'text'
+.multiple_file_selector_container
+  = image_tag('admin/attachment_block_icon.gif', :clas => 'paperclip')
+  .indented
+    %h2 
+      酒品图片
+      %span (单个文件不得大于2M)
+    = f.file_field  :avatar
