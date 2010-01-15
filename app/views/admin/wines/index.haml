@@ -1,9 +1,20 @@
-#content
-  .caption
-    %h1 
-      = t('admin.caption.wines')
-      %span
-        %a{:href => new_admin_wine_path}= t('admin.action.add_wine')
-  .body
-    content at here
-#content_bot
+#board
+  #panel
+    .caption
+      %h1= t('admin.caption.wines')
+    .body
+      %ul.img_card_list.clearfix
+        - 4.times do
+          %li.wine.clearfix
+            .avatar= image_tag('admin/wine-small.jpg', :size => '80x100')
+            .meta
+              %p wine name
+              %p 209 RMB
+  #panel_bot
+
+#acts
+  %ul
+    %li= link_to t('admin.action.add_wine'),  new_admin_wine_path
+    %li= link_to '添加至虚拟分类','#'
+    %li= link_to '导入酒品供应商','#'
+    %li= link_to '删除酒品信息','#'

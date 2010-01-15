@@ -1,7 +1,22 @@
 @charset "utf-8";
 /* 	CSS Rest File - Used to Reset Default Browser Styling 	*/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
-
+/***********************
+ *  use for clear element float
+ ***********************/
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
 /* -------------------------------------------------------------------
 THEME FILE
 -------------------------------------------------------------------- */
@@ -218,16 +233,75 @@ CONTENT (where the content is wrapped)
   width: 920px; height: 100%;
   margin-bottom:0px;
 }
+#board {
+  width:80%;
+  float:left;
+}
+#acts {
+  width:18%;
+  float:right;
+}
+#acts h1 {
+  background-color:#EDF3FE;
+  border-bottom:1px solid #DCDCDC;
+  color:#333333;
+  font-size:13px;
+  padding:5px 8px;
+}
+#acts ul {
+  margin-left:15px;
+}
+#acts li {
+  padding:5px 0px;
+  list-style:square;
+}
+/**/
 
-#content, #columns #main {
+#panel{
   background:#FFFFFF url(/images/admin/right-bg.gif) repeat-y scroll right center;
 }
-#content_bot, #columns #main_bot {
+#panel_bot {
+  background:transparent url(/images/admin/bottom-bg.gif) no-repeat scroll right top;
+  height:7px;
+}
+#panel .caption {
+  background:#EDF3FE none repeat scroll 0 0;
+  margin:0 0 5px;
+  padding:10px 30px 10px 23px;
+  width:675px;
+}
+#panel .caption h1 {
+  font-size:16px;
+  color:#000;
+  margin:0px;
+  padding:0px;
+}
+#panel .caption h1 span {
+  float:right;
+}
+#panel .caption h1 span a {
+  font-size:14px;
+  font-weight:normal;
+  text-decoration:none;
+}
+#panel .caption h1 span a:hover {
+  text-decoration:underline;
+}
+#panel .body {
+  padding:10px 60px 10px 23px;
+}
+
+/**/
+
+#content, #columns #main, #list #main {
+  background:#FFFFFF url(/images/admin/right-bg.gif) repeat-y scroll right center;
+}
+#content_bot, #columns #main_bot, #list #main_bot {
   background:transparent url(/images/admin/bottom-bg.gif) no-repeat scroll right top;
   height:7px;
 /*  margin-bottom:15px;*/
 }
-#content .caption, #columns #main .caption {
+#content .caption, #columns #main .caption, #list #main .caption {
   background:#EDF3FE none repeat scroll 0 0;
   margin:0 0 5px;
   padding:10px 30px 10px 23px;
@@ -249,15 +323,15 @@ CONTENT (where the content is wrapped)
 #content .caption h1 span a:hover, #columns #main .caption h1 span a:hover {
   text-decoration:underline;
 }
-#content .body, #columns #main .body {
+#content .body, #columns #main .body, #list #main .body {
   padding:10px 60px 10px 23px;
 }
 
 #columns #main, #columns #main_bot {
-  width:650px;
+  width:720px;
 }
 #columns #main .caption {
-  width:589px;
+  width:659px;
 }
 #content .caption {
   width:859px;
@@ -367,6 +441,26 @@ form .radio         { height: 15px; width: 15px; padding: 0px; margin: 0 5px 0 5
 
 .styled_textarea      { margin-bottom: 10px; background-color: #F3F3F3; width: 95%; padding: 0px; border: 1px solid #CCCCCC;}*/
 
+/** horizontal list with image **/
+ul.img_card_list {
+}
+ul.img_card_list li {
+/*  float:left;*/
+  width:195px;
+  padding:3px;
+  margin:13px 3px 3px 3px;
+}
+.img_card_list .wine p {
+  margin:0px;
+  padding:0px;
+}
+.img_card_list .wine .avatar{
+  float:left;
+}
+.img_card_list .wine .meta{
+  float:left;
+  margin-left:10px;
+}
 
 /* ---------------------------------------------------------------------------------
 TABLES

@@ -1,14 +1,14 @@
-#columns
-  #main
+#board
+  #panel
     .caption
-      %h1 
-        = t('admin.caption.wine_add')
-        %span
-          %a{:href => admin_wines_path}= t('admin.return.wine_list')
+      %h1= t('admin.caption.wine_add')
     .body
       - form_for @wine, :url => admin_wines_path do |f|
         = render :partial => "form", :locals => {:f => f}
         .submit
           = f.submit "发布当前酒品信息"
-          
-  #main_bot
+  #panel_bot
+
+#acts
+  %ul
+    %li= link_to t('admin.return.wine_list'),  admin_wines_path

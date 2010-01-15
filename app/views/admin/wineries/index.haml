@@ -1,9 +1,11 @@
-#content
-  .caption
-    %h1 
-      = t('admin.caption.wineries')
-      %span
-        %a{:href => new_admin_winery_path}= t('admin.action.add_winery')
-  .body
-    content at here
-#content_bot
+#board
+  #panel
+    .caption
+      %h1= t('admin.caption.wineries')
+    .body
+      content at here
+  #panel_bot
+
+#acts
+  %ul
+    %li= link_to t('admin.action.add_winery'),  new_admin_winery_path

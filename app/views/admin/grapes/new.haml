@@ -1,13 +1,14 @@
-#columns
-  #main
+#board
+  #panel
     .caption
-      %h1 
-        = t('admin.caption.grape_add')
-        %span
-          %a{:href => admin_wines_path}= t('admin.return.grape_list')
+      %h1= t('admin.caption.grape_add')
     .body
       - form_for @grape, :url => admin_grapes_path do |f|
         = render :partial => "form", :locals => {:f => f}
         .submit
           = f.submit "发布当前原料信息"
-  #main_bot
+  #panel_bot
+
+#acts
+  %ul
+    %li= link_to t('admin.return.grape_list'),  admin_grapes_path
