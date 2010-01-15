@@ -57,7 +57,7 @@ TYPOGRAPHY STYLES (generic typography)
 
 body { 
   font-family: Arial, Helvetica, sans-serif; 
-  background-color: #E7E7E7; 
+  background-color: #E5E5E5; 
   color: #666666; 
   line-height: 24px; 
 }
@@ -208,14 +208,49 @@ NAVIGATION (navigation tabs and submenu)
 CONTENT (where the content is wrapped)
 --------------------------------------------------------------------------------- */
 #content_wrapper {
-  background-color: #FFFFFF;
-  border: 1px solid #CCCCCC;
-  margin: 20px auto 10px auto;
-  padding: 30px 24px 30px 29px;	
+/*  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;*/
+  margin: 20px auto;
+  padding: 10px 10px;	
   position: relative;
   overflow: hidden;
   clear: both;
-  width: 905px; height: 100%;
+  width: 920px; height: 100%;
+}
+
+#content, #columns #main {
+  background:#FFFFFF url(/images/admin/right-bg.gif) repeat-y scroll right center;
+}
+#content_bot, #columns #main_bot {
+  background:transparent url(/images/admin/bottom-bg.gif) no-repeat scroll right top;
+  height:7px;
+  margin-bottom:15px;
+}
+#content .caption, #columns #main .caption {
+  background:#EDF3FE none repeat scroll 0 0;
+  margin:0 0 5px;
+  padding:10px 30px 10px 23px;
+}
+#content .caption h1, #columns #main .caption h1 {
+  color:#000;
+  margin:0px;
+  padding:0px;
+}
+#content .caption h1 span, #columns #main .caption h1 span {
+  float:right;
+}
+#content .body, #columns #main .body {
+  padding:10px 60px 10px 23px;
+}
+
+#columns #main, #columns #main_bot {
+  width:650px;
+}
+#columns #main .caption {
+  width:589px;
+}
+#content .caption {
+  width:859px;
 }
 
 /* ---------------------------------------------------------------------------------
@@ -292,10 +327,10 @@ FOOTER
   position: relative;
   overflow: hidden;
   clear: both;
-  width: 905px;
+  width: 900px;
   font-size: 70%;
-  margin: 20px auto 10px auto;
-  padding: 15px 24px 15px 29px;
+  margin: 20px auto;
+  padding: 15px 10px;
   line-height: 15px;
 }
 
