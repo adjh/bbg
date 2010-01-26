@@ -11,5 +11,5 @@ config.action_controller.allow_forgery_protection    = false
 config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 config.gem "webrat",  :lib => false
-config.gem 'thoughtbot-factory_girl', :lib => false
-config.gem 'thoughtbot-shoulda',  :lib => false
+config.gem 'factory_girl', :lib => false
+config.gem 'shoulda',  :lib => false

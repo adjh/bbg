@@ -5,5 +5,8 @@ class Grape < ActiveRecord::Base
     :url => "/attacheds/grape/:attachment/:id_partition/:id-:style.png" ,
     :default_url   => "/images/grape-avatar-:style-missing.png",
     :path => ":rails_root/public/attacheds/grape/:attachment/:id_partition/:id-:style.png"
-    
+
+  private
+  
+  validates_presence_of :name_cn, :description
 end

@@ -1,14 +1,13 @@
 #board
   #panel
     .caption
-      %h1= t('admin.caption.grape_add')
+      %h1
+        = t('admin.caption.grape_add')
+        %span= link_to t('admin.return.grape_list'),  admin_grapes_path
     .body
+      = error_messages_for :grape
       - form_for @grape, :url => admin_grapes_path do |f|
         = render :partial => "form", :locals => {:f => f}
         .submit
-          = f.submit "发布当前原料信息"
+          = f.submit t("admin.button.create", :resource => Grape.human_name)
   #panel_bot
-
-#acts
-  %ul
-    %li= link_to t('admin.return.grape_list'),  admin_grapes_path

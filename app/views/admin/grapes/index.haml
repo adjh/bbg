@@ -1,11 +1,25 @@
-#board
-  #panel
-    .caption
-      %h1= t('admin.caption.grapes')
-    .body
-      content at here
-  #panel_bot
+#content
+  .caption
+    %h1
+      = t('admin.caption.grapes')
+      %span= link_to t('admin.action.add_grape'),  new_admin_grape_path
+  .body
+    %table.tablesorter{:id => 'myTable', :width => '100%'}
+      %thead
+        %tr
+          %th= check_box_tag 'all'
+          %th.header{:width => "20%"} 中文名称
+          %th.header{:width => "20%"} 常见别名
+          %th.header{:width => "20%"} 英文名称
+          %th.header{:width => "20%"} 气味
+          %th.header{:width => "16%"} 操作
+      - 4.times do
+        %tr
+          %td= check_box_tag 'all'
+          %td nanafda
+          %td nanafda
+          %td nanafda
+          %td nanafda
+          %td 
 
-#acts
-  %ul
-    %li= link_to t('admin.action.add_grape'),  new_admin_grape_path
+#content_bot
