@@ -9,19 +9,23 @@
         %tr
           %th{:width => "2%"}= check_box_tag 'all'
           %th= Grape.human_attribute_name(:name_cn)
-          %th{:width => "20%"}= Grape.human_attribute_name(:name_en)
-          %th{:width => "20%"}= Grape.human_attribute_name(:alias_cn)
+          %th{:width => "20%"}= Grape.human_attribute_name(:alias)
           %th{:width => "20%"}= Grape.human_attribute_name(:smell)
+          %th{:width => "20%"}= Grape.human_attribute_name(:description)
           %th{:width => "16%"}= t('g.action')
       - unless @grapes.blank?
         - @grapes.each do |grape|
           %tr
             %td= check_box_tag 'all'
-            %td= grape.name_cn
-            %td= grape.name_en
-            %td= grape.alias_cn
-            %td= grape.smell
             %td
+              %p= grape.name_cn
+              %p= grape.name_en
+            %td= grape.alias
+            %td= grape.smell
+            %td= strip_tags(grape.description).truncate(25)
+            %td
+              = link_to t('g.edit'), edit_admin_grape_path(grape)
+              = link_to t('g.delete'), admin_grape_path(grape), :method => :delete, :confirm => t('g.are_you_sure')
       - else
         %tr
           %td{:colspan => 6}= t('g.no_entry')

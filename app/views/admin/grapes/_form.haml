@@ -5,18 +5,16 @@
   %h2= Grape.human_attribute_name(:name_en)
   = f.text_field :name_en,  :class => 'text'
 .input
-  %h2= Grape.human_attribute_name(:alias_cn)
-  = f.text_field :alias_cn,  :class => 'text'  
-.textarea
-  %h2= Grape.human_attribute_name(:description)
-  = f.text_area :description, :rows => 4, :cols => 60
+  %h2= Grape.human_attribute_name(:alias)
+  = f.text_field :alias,  :class => 'text'  
 .input
   %h2= Grape.human_attribute_name(:smell)
   = f.text_field :smell,  :class => 'text'
-.multiple_file_selector_container
-  = image_tag('admin/attachment_block_icon.gif', :clas => 'paperclip')
-  .indented
-    %h2 
-      = Grape.human_attribute_name(:avatar)
-      %span= t('g.img_limited')
-    = f.file_field  :avatar
+.textarea
+  %h2= Grape.human_attribute_name(:description)
+  = f.text_area :description, :rows => 4, :cols => 53, :style => 'width:80%'
+.input
+  %h2 
+    = Grape.human_attribute_name(:avatar)
+    %span= t('g.img_limited')
+  = f.file_field  :avatar

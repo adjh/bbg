@@ -95,9 +95,10 @@ zh:
       
     attributes:
       grape:
+        name:     '名称'
         name_cn:  '中文名称'
         name_en:  '英文名称'
-        alias_cn: '中文别名'
+        alias:    '别名'
         smell:    '气味'
         description:  '原料描述'
         avatar:   '原料图片'
@@ -116,6 +117,11 @@ zh:
         description:  '酒品描述'
       winery:
         name_cn:  '中文名称'
+        name_en:  '英文名称'
+        region:   '所在地区'
+        latitude:  '纬度'
+        longitude: '经度'
+        description:  '酒庄描述'
         
   # global variables
   g:
@@ -126,13 +132,13 @@ zh:
     search:     "Search"
     preview:    "Preview"
     create:     "Create"
-    edit:       "Edit"
+    edit:       "编辑"
     show:       "Show"
     update:     "Update"
     upload:     "Upload"
     save:       "Save"
-    delete:     "Delete"
-    destroy:    "Destroy"
+    delete:     "删除"
+    destroy:    "销毁"
     are_you_sure:  "Are you sure？"
     see_all:    "See all"
     see_more:   "more..."
@@ -225,7 +231,6 @@ zh:
       resource_del:   '删除{{resource}}'
       
       return_to_resource_list:  '返回{{resource}}列表'
-
       
     flash:
       create_success:  '{{resource}} 创建成功.'
@@ -234,4 +239,4 @@ zh:
       
     button:
       create: '创建{{resource}}'
-      update: '更新{{resource}} 属性信息'
+      update: '更新{{resource}}'

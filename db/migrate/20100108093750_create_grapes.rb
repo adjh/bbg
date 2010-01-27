@@ -4,7 +4,7 @@ class CreateGrapes < ActiveRecord::Migration
       t.string  :name_cn
       t.string  :name_en
       t.text    :description
-      t.string  :alias_cn
+      t.string  :alias
       t.string  :smell
       t.timestamps
     end

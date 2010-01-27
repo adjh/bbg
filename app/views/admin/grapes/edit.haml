@@ -2,12 +2,12 @@
   #panel
     .caption
       %h1
-        = t('admin.action.resource_new', :resource => Grape.human_name)
+        = t('admin.action.resource_edit', :resource => Grape.human_name)
         %span= link_to t('admin.action.return_to_resource_list', :resource => Grape.human_name),  admin_grapes_path
     .body
       = error_messages_for :grape
       - form_for @grape, :url => admin_grapes_path do |f|
         = render :partial => "form", :locals => {:f => f}
         .submit
-          = f.submit t("admin.button.create", :resource => Grape.human_name)
+          = f.submit t("admin.button.update", :resource => Grape.human_name)
   #panel_bot
