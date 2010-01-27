@@ -7,6 +7,6 @@ class Grape < ActiveRecord::Base
     :path => ":rails_root/public/attacheds/grape/:attachment/:id_partition/:id-:style.png"
 
   private
+  validates_presence_of :name_cn, :name_en, :description
   
-  validates_presence_of :name_cn, :description
 end

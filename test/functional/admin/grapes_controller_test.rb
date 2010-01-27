@@ -5,7 +5,7 @@ class Admin::GrapesControllerTest < ActionController::TestCase
   test "should get new grape instance" do
     get :new
     assert_response :success
-    assert assigns(@grape)
+    assert assigns(:grape)
   end
   
   context "Create grape" do
@@ -25,6 +25,12 @@ class Admin::GrapesControllerTest < ActionController::TestCase
       assert_not_nil assigns(:grape).errors.on(:name_cn)
       assert_not_nil assigns(:grape).errors.on(:description)
     end
+  end
+  
+  test "on GET to :index for grape list" do
+    get :index
+    assert_response :success
+    assert assigns(:grapes)
   end
   
 end

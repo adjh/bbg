@@ -1,18 +1,39 @@
 #content
   .caption
     %h1
-      = t('admin.caption.wines')
+      = t('admin.caption.resource_list', :resource => Wine.human_name)
       %span
-        = link_to '添加酒品', new_admin_wine_path
-        = link_to '导入虚拟分类', '#'
-        = link_to '导入供应商', '#'
+        = link_to t('admin.action.resource_new', :resource => Wine.human_name), new_admin_wine_path
         = link_to '删除', '#'
   .body
-    %ul.img_card_list.clearfix
-      - 4.times do
-        %li.wine.clearfix
-          .avatar= image_tag('admin/wine-small.jpg', :size => '80x100')
-          .meta
-            %p wine name
-            %p 209 RMB
+    %table{:id => 'myTable', :width => '100%'}
+      %thead
+        %tr
+          %th{:width => '2%'}= check_box_tag 'all'
+          %th= Wine.human_attribute_name(:name)
+          %th{:width => "30%"}= Wine.human_attribute_name(:region_metas)
+          %th{:width => "20%"}= Wine.human_attribute_name(:basic_metas)
+          %th{:width => "16%"}= t('g.action')
+      %tbody
+        - 10.times do
+          %tr
+            %td= check_box_tag 'all'
+            %td 
+              %p 红酒中文名
+              %p wine english name
+            %td 
+              %p
+                = Wine.human_attribute_name(:region)
+              %p
+                = Wine.human_attribute_name(:wine_type)
+              %p
+                = Wine.human_attribute_name(:winery)
+            %td 
+              %p
+                = Wine.human_attribute_name(:vintage)
+              %p
+                = Wine.human_attribute_name(:capacity)
+              %p
+                = Wine.human_attribute_name(:degree)
+            %td
 #content_bot

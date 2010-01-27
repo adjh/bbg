@@ -35,13 +35,7 @@ THEME FILE
 #sidebar a { color: #3C8DDF;font-size: 14px;font-weight: bold;}
 #sidebar a:hover { color: #1B5C9E; }
 
-table.tablesorter thead tr th, table.tablesorter tfoot tr th {
-  background-color: #D9E9F9;
-  border: 1px solid #B6D5F3;
-  font-size: 9pt;
-  padding: 7px;
-  text-align: left;
-}
+
 
 /* ---------------------------------------------------------------------------------
 UNIVERSAL (used to set generic classes)
@@ -465,18 +459,24 @@ ul.img_card_list li {
 /* ---------------------------------------------------------------------------------
 TABLES
 --------------------------------------------------------------------------------- */
-#myTable img	{ argin-right: 3px;margin-left: 3px;padding: 0px;}
+#myTable img	{ margin-right: 3px;margin-left: 3px;padding: 0px;}
 
-table.tablesorter { border: 1px solid #CCCCCC; font-size: 8pt; width: 100%; text-align: left;margin: 8px 0 5px 0;}
-
-table.tablesorter thead tr .header {
+table { border: 1px solid #CCCCCC; font-size: 8pt; width: 100%; text-align: left;margin: 8px 0 5px 0;}
+table thead tr th, table tfoot tr th {
+  background-color: #D9E9F9;
+  border: 1px solid #B6D5F3;
+  font-size: 9pt;
+  padding: 7px;
+  text-align: left;
+}
+table thead tr th {
 /*  background-image: url(/images/admin/bg.gif);*/
   background-repeat: no-repeat;
   background-position: center right;
 /*  cursor: pointer;*/
-  padding-left: 10px;
+/*  padding-left: 10px;*/
 }
-table.tablesorter tbody td {
+table tbody td {
   color: #666666;
   background-color: #FFF;
   vertical-align: top;
@@ -485,11 +485,9 @@ table.tablesorter tbody td {
   line-height: 20px;
   border-right: 1px solid #CCC;
 }
-
-
-table.tablesorter tbody tr.odd td 			{ background-color:#E9E9E9; }
-table.tablesorter thead tr .headerSortUp 		{ background-image: url(/images/admin/asc.gif); }
-table.tablesorter thead tr .headerSortDown 	{ background-image: url(/images/admin/desc.gif); }
+table tbody tr.odd td 			{ background-color:#E9E9E9; }
+table thead tr .headerSortUp 		{ background-image: url(/images/admin/asc.gif); }
+table thead tr .headerSortDown 	{ background-image: url(/images/admin/desc.gif); }
 
 .paginator 				{ list-style : none; display : block; padding: 8px 0 0 0; text-align: right; clear: both; margin: 0px;} 
 .paginator li 				{ display : inline;} 

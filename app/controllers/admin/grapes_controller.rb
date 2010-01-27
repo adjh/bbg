@@ -1,6 +1,10 @@
 class Admin::GrapesController < Admin::BaseController
   set_tab :wines
   
+  def index
+    @grapes = Grape.paginate(:page => params[:page], :per_page => 10)
+  end
+  
   def new
     @grape  = Grape.new
   end

@@ -1,25 +1,28 @@
 #content
   .caption
     %h1
-      = t('admin.caption.grapes')
-      %span= link_to t('admin.action.add_grape'),  new_admin_grape_path
+      = t('admin.caption.resource_list', :resource => Grape.human_name)
+      %span= link_to t('admin.action.resource_new', :resource => Grape.human_name),  new_admin_grape_path
   .body
-    %table.tablesorter{:id => 'myTable', :width => '100%'}
+    %table{:id => 'myTable', :width => '100%'}
       %thead
         %tr
-          %th= check_box_tag 'all'
-          %th.header{:width => "20%"} 中文名称
-          %th.header{:width => "20%"} 常见别名
-          %th.header{:width => "20%"} 英文名称
-          %th.header{:width => "20%"} 气味
-          %th.header{:width => "16%"} 操作
-      - 4.times do
+          %th{:width => "2%"}= check_box_tag 'all'
+          %th= Grape.human_attribute_name(:name_cn)
+          %th{:width => "20%"}= Grape.human_attribute_name(:name_en)
+          %th{:width => "20%"}= Grape.human_attribute_name(:alias_cn)
+          %th{:width => "20%"}= Grape.human_attribute_name(:smell)
+          %th{:width => "16%"}= t('g.action')
+      - unless @grapes.blank?
+        - @grapes.each do |grape|
+          %tr
+            %td= check_box_tag 'all'
+            %td= grape.name_cn
+            %td= grape.name_en
+            %td= grape.alias_cn
+            %td= grape.smell
+            %td
+      - else
         %tr
-          %td= check_box_tag 'all'
-          %td nanafda
-          %td nanafda
-          %td nanafda
-          %td nanafda
-          %td 
-
+          %td{:colspan => 6}= t('g.no_entry')
 #content_bot

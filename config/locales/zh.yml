@@ -90,13 +90,37 @@ zh:
         record_invalid: "地址不能为空"
     models:
       grape:  '原料'
+      wine:   '酒品'
+      winery: '酒庄'
+      
     attributes:
       grape:
         name_cn:  '中文名称'
+        name_en:  '英文名称'
+        alias_cn: '中文别名'
+        smell:    '气味'
         description:  '原料描述'
+        avatar:   '原料图片'
+      wine:
+        name:     '名称'
+        name_cn:  '中文名称'
+        name_en:  '英文名称'
+        region_metas: '产地信息'
+        basic_metas:  '基本属性'
+        region:    '产地'
+        wine_type: '类型'
+        winery:   '酒庄'
+        vintage:  '年份'
+        capacity: '容量'
+        degree:   '度数'
+        description:  '酒品描述'
+      winery:
+        name_cn:  '中文名称'
+        
   # global variables
   g:
-    click: "Click here"
+    action:     "操作选项"
+    click:      "Click here"
     submit:     "Submit"
     cancel:     "Cancel"
     search:     "Search"
@@ -120,7 +144,8 @@ zh:
     remember_me: 'Remember Me'
     forgot_pwd: 'Forgot password? '
     signup:     "Sign up"
-    no_entry: 'No entry yet.'
+    no_entry: '尚未添加任何数据.'
+    img_limited:  '单个图片大小不得超过2M.'
   # navigator menus
   m:
     homepage: 'Home'
@@ -191,27 +216,16 @@ zh:
       gohomepage: '返回网站首页'
       
     caption:
-      comments: '评论管理'
-      
-      wines:  '酒品管理'
-      wine_add: '添加酒品信息'
-      
-      grapes: '原料管理'
-      grape_add:  '添加原料信息'
-      
-      wineries: '酒庄管理'
-      winery_add: '添加酒庄信息'
+      resource_admin: '{{resource}}管理'
+      resource_list:  '{{resource}}列表'
       
     action:
-      add_wine: '添加酒品'
-      add_grape:  '添加原料'
-      add_winery: '添加酒庄'
+      resource_new:   '新建{{resource}}'
+      resource_edit:  '编辑{{resource}}'
+      resource_del:   '删除{{resource}}'
       
-      
-    return:
-      wine_list:  '返回酒品列表'
-      grape_list: '返回原料列表'
-      winery_list:  '返回酒庄列表'
+      return_to_resource_list:  '返回{{resource}}列表'
+
       
     flash:
       create_success:  '{{resource}} 创建成功.'

@@ -1,5 +1,5 @@
 %ul
-  %li= link_to t('admin.caption.wines'), admin_wines_path
-  %li= link_to t('admin.caption.grapes'), admin_grapes_path, :class => 'active'
-  %li= link_to t('admin.caption.wineries'), admin_wineries_path
+  %li= link_to t('admin.caption.resource_admin', :resource => Wine.human_name), admin_wines_path
+  %li= link_to t('admin.caption.resource_admin', :resource => Grape.human_name), admin_grapes_path, :class => 'active'
+  %li= link_to t('admin.caption.resource_admin', :resource => Winery.human_name), admin_wineries_path
   %li= link_to t('admin.caption.comments'), '#', :class => 'last'
