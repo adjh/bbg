@@ -8,7 +8,7 @@
       %thead
         %tr
           %th{:width => "2%"}= check_box_tag 'all'
-          %th{:width => "2%"}
+          %th{:width => "2%"}= Grape.human_attribute_name(:avatar)
           %th= Grape.human_attribute_name(:name_cn)
           %th{:width => "20%"}= Grape.human_attribute_name(:alias)
           %th{:width => "20%"}= Grape.human_attribute_name(:smell)

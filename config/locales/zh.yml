@@ -101,7 +101,7 @@ zh:
         alias:    '别名'
         smell:    '气味'
         description:  '原料描述'
-        avatar:   '原料图片'
+        avatar:   '图片'
       wine:
         name:     '名称'
         name_cn:  '中文名称'
