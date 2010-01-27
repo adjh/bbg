@@ -8,6 +8,7 @@
       %thead
         %tr
           %th{:width => "2%"}= check_box_tag 'all'
+          %th{:width => "2%"}
           %th= Grape.human_attribute_name(:name_cn)
           %th{:width => "20%"}= Grape.human_attribute_name(:alias)
           %th{:width => "20%"}= Grape.human_attribute_name(:smell)
@@ -17,6 +18,7 @@
         - @grapes.each do |grape|
           %tr
             %td= check_box_tag 'all'
+            %td= image_tag grape.avatar.url(:thumb), :class => "avatar"
             %td
               %p= grape.name_cn
               %p= grape.name_en

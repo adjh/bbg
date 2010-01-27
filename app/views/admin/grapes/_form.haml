@@ -18,3 +18,5 @@
     = Grape.human_attribute_name(:avatar)
     %span= t('g.img_limited')
   = f.file_field  :avatar
+  - if grape.avatar?
+    %p= image_tag grape.avatar.url(:large), :class => "avatar"

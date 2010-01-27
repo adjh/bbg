@@ -14,6 +14,7 @@ config/*.sphinx.conf
 public/javascripts/all.js
 public/stylesheets/all.js
 public/avatars
+public/attacheds
 *~
 .#*
 .*.swp

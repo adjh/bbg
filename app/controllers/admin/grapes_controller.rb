@@ -20,7 +20,7 @@ class Admin::GrapesController < Admin::BaseController
   def update
     if @grape.update_attributes(params[:grape])
       flash[:notice] = t('admin.flash.update_success', :resource => Grape.human_name)
-      redirect_to admin_grape_path(@grape) 
+      redirect_to edit_admin_grape_path(@grape) 
     else
       render :action => :edit
     end

@@ -48,7 +48,7 @@ class Admin::GrapesControllerTest < ActionController::TestCase
       assert_equal assigns(:grape).name_en, 'update success'
       assert_equal I18n.t('admin.flash.update_success', 
         :resource => Grape.human_name), flash[:notice]
-      assert_redirected_to admin_grape_path(assigns(:grape))
+      assert_redirected_to edit_admin_grape_path(assigns(:grape))
     end
     
     should "failured with nil name_cn and render the edit page" do
